@@ -1,15 +1,11 @@
 <?php
 /**
- * @file elfinder.php
- * @brief Containing Elfinder class.
- *
  * Elfinder plugin elfinder.php
  * 
- * @author David Stutz
- * @version 1.0.0
+ * @author David Stutz https://github.com/davidstutz
+ * @author Takashi Uchiyama https://github.com/bbfriend/elfinder_xh
+ * @version 1.01
  * @license GPLv3
- * @package elfinder
- * @see http://sourceforge.net/projects/cmsimplepictures/
  * 
  *  This file is part of the elfinder filebrowser plugin for CMSimple.
  *
@@ -25,32 +21,14 @@
  *
  *  @see <http://www.gnu.org/licenses/>.
  */
-/*! \mainpage CMSimple Elfinder Filebrowser
- *
- * This plugin provides the Elfinder filebrowser for usage in your CMSimple installation.
- * 
- * This is  a generated documentation of the plugin.
- * 
- * \mainpage
- */
 
  /**
  * @class Elfinder
  * 
  * Elfinder class for generla informartion and script including.
  * 
- * @author David Stutz
- * @since 1.0.0
- * @package elfinder
  */
 class Elfinder {
-
-	/**
-	 * Current version.
-	 * 
-	 * @var <string>
-	 */
-	const VERSION = '1.0.0beta1';
 	
 	/**
 	 * @static
@@ -61,7 +39,7 @@ class Elfinder {
 	 */
 	static function name()
 	{
-		return "Elfinder filebrowser plugin.";
+		return "elFinder_XH filebrowser plugin.";
 	}
 	
 	/**
@@ -73,7 +51,7 @@ class Elfinder {
 	 */
 	static function release_date() 
 	{
-	   return "27th October 2014";
+	   return "2016/05/20";
 	}
 	
 	/**
@@ -85,7 +63,7 @@ class Elfinder {
 	 */
 	static function author()
 	{
-		return "David Stutz";
+		return "David Stutz / Takashi Uchiyama";
 	}
 	
 	/**
@@ -97,7 +75,7 @@ class Elfinder {
 	 */
 	static function github()
 	{
-		return '<a href="https://github.com/davidstutz/cmsimple-elfinder" target="_blank">GitHub Repository</a>';
+		return '<a href="https://github.com/davidstutz/cmsimple-elfinder" target="_blank">davidstutz/cmsimple-elfinder</a> <a href="https://github.com/bbfriend/elfinde_xh" target="_blank">bbfriend/elfinde_xh</a>';
 	}
 	
 	/**
@@ -109,7 +87,7 @@ class Elfinder {
 	 */
 	static function description()
 	{
-		return 'Elfinder filebrowser plugin.';
+		return '<q>elFinder is an open-source file manager for web, written in JavaScript using jQuery UI. Creation is inspired by simplicity and convenience of Finder program used in Mac OS X operating system.</q>';
 	}
 	
 	/**
@@ -121,10 +99,7 @@ class Elfinder {
 	 */
 	static function legal()
 	{
-		return '<q>elFinder is an open-source file manager for web, written in JavaScript using jQuery UI. As you can see its creation is inspired by simplicity and convenience of Finder program used in Mac OS X operating system.</q><br />'
-			.'For more information see: <a href="https://github.com/Studio-42/elFinder" target="_blank">elFinder Website</a><br />'
-			.'elFinder license: BSD - see <a href="http://en.wikipedia.org/wiki/BSD_licenses">Wikipedia</a><br />'
-			.'JQuery and JQuery-UI license: MIT and GPL - see <a href="http://en.wikipedia.org/wiki/MIT_License">Wikipedia MIT License</a> - <a href="http://en.wikipedia.org/wiki/Gpl">Wikipedia MIT License</a><br />';
+		return 'JQuery and JQuery-UI license: MIT and GPL - see <a href="http://en.wikipedia.org/wiki/MIT_License">Wikipedia MIT License</a> - <a href="http://en.wikipedia.org/wiki/Gpl">Wikipedia MIT License</a><br />';
 	}
 	
 	/**
@@ -146,8 +121,8 @@ class Elfinder {
 		
 		if (!$jquery_included)
 		{
-			$hjs .= '<script src="'.$pth['folder']['plugins'] . $plugin . '/jquery/js/jquery-1.7.1.min.js" type="text/javascript"></script>';
-			$hjs .= '<script src="'.$pth['folder']['plugins'] . $plugin . '/jquery/js/jquery-ui-1.8.13.custom.min.js" type="text/javascript"></script>';
+			$hjs .= '<script src="'.$pth['folder']['plugins'] . $plugin . '/jquery/js/jquery-1.12.2.min.js" type="text/javascript"></script>';
+			$hjs .= '<script src="'.$pth['folder']['plugins'] . $plugin . '/jquery/js/jquery-ui-1.11.4.min.js" type="text/javascript"></script>';
 			
 			$jquery_included = TRUE;
 		}
@@ -165,22 +140,94 @@ class Elfinder {
 	 */
 	public static function include_elfinder()
 	{
-	 	global $pth, $plugin, $hjs, $sl;
+	 	global $pth, $plugin, $hjs, $sl,$plugin_cf;
 		$plugin = basename(dirname(__FILE__),"/");
 		
 		static $elfinder_included = FALSE;
 		
 		if (!$elfinder_included)
 		{
-			$hjs .= '<link rel="stylesheet" href="' . $pth['folder']['plugins']. 'elfinder/elfinder/css/elfinder.css" type="text/css" media="screen" charset="utf-8">';
-			$hjs .= '<link rel="stylesheet" href="' . $pth['folder']['plugins']. 'elfinder/elfinder/css/theme.css" type="text/css" media="screen" charset="utf-8">';
+			$hjs .= '<link rel="stylesheet" href="' . $pth['folder']['plugins'] . $plugin . '/elfinder/css/elfinder.min.css" type="text/css" media="screen" charset="utf-8">';
+			$hjs .= '<link rel="stylesheet" href="' . $pth['folder']['plugins'] . $plugin . '/elfinder_theme/'. $plugin_cf[$plugin]['interface_theme'] . '/css/theme.css" type="text/css" media="screen" charset="utf-8">';
+			$hjs .= '<link rel="stylesheet" href="' . $pth['folder']['plugins'] . $plugin . '/css/stylesheet.css" type="text/css" media="screen" charset="utf-8">';
 
-			$hjs .= '<script src="' . $pth['folder']['plugins'] . 'elfinder/elfinder/js/elfinder.min.js" type="text/javascript" charset="utf-8"></script>';
-			$hjs .= '<script src="' . $pth['folder']['plugins'] . 'elfinder/elfinder/js/i18n/elfinder.' . $sl . '.js" type="text/javascript" charset="utf-8"></script>';
-			
-			$hjs .= '<script src="' . $pth['folder']['plugins'] . 'elfinder/init.js" type="text/javascript"></script>';
+			$hjs .= '<script src="' . $pth['folder']['plugins'] . $plugin . '/elfinder/js/elfinder.min.js" type="text/javascript" charset="utf-8"></script>';
+			if( $sl != 'en'){
+				$hjs .= '<script src="' . $pth['folder']['plugins'] . $plugin . '/elfinder/js/i18n/elfinder.' . $_SESSION['elfinder']['lang'] . '.js" type="text/javascript" charset="utf-8"></script>';
+			}
+			$hjs .= '<script src="' . $pth['folder']['plugins'] . $plugin . '/init.js" type="text/javascript"></script>';
 			
 			$elfinder_included = TRUE;
 		}
 	}
+
+
+
+/**
+ * Returns the system checks.
+ *
+ * @return string  The (X)HTML.
+ */
+	public static function systemChecks()
+	{ // RELEASE-TODO
+	    global $pth, $tx, $plugin_tx,$plugin;
+
+		//Requirements
+		$equire_php_ver = '5.2'; //PHP VERSION
+		$equire_exts = array( //PHP extensions
+			1 => 'gd',
+			2 => 'imagick',
+			3 => 'intl',
+			4 => 'I18N_UnicodeNormalizer'
+		);
+		$equire_folders = array( //Folders
+			0 => $pth['folder']['userfiles'],
+			1 => $pth['folder']['images'],
+			2 => $pth['folder']['downloads'],
+			3 => $pth['folder']['media']
+		);
+
+		$warn_files = array( 
+			0 => $pth['folder']['plugins'].$plugin.'/elfinder/elfinder.html',
+			1 => $pth['folder']['plugins'].$plugin.'/elfinder/php/connector.minimal.php',
+		);
+
+	    $ptx = $plugin_tx[$plugin];
+	    $imgdir = $pth['folder']['plugins'].$plugin.'/help/images/';
+	    $ok = tag('img src="'.$imgdir.'ok.png" alt="ok"');
+	    $warn = tag('img src="'.$imgdir.'warn.png" alt="warning"');
+	    $fail = tag('img src="'.$imgdir.'fail.png" alt="failure"');
+
+	    $o = '<h2>'.$ptx['syscheck_title'].'</h2>';
+		//Caution Message 
+		$o .= $ptx['syscheck_cautionmessage'].tag('br');
+		//PHP VERSION 
+	    $o .= (version_compare(PHP_VERSION, $equire_php_ver) >= 0 ? $ok : $fail)
+		    .'&nbsp;&nbsp;'.sprintf($ptx['syscheck_phpversion'], PHP_VERSION,$equire_php_ver)
+		    .tag('br')."\n";
+		//PHP extensions
+	    foreach ($equire_exts as $ext) {
+			$o .= (extension_loaded($ext) ? $ok : $fail)
+				.'&nbsp;&nbsp;'.sprintf($ptx['syscheck_extension'], $ext).tag('br')."\n";
+		}
+		//Other PHP func etc.
+//	    $o .= (!get_magic_quotes_runtime() ? $ok : $fail)
+//		    .'&nbsp;&nbsp;'.$ptx['syscheck_magic_quotes'].tag('br')."\n";
+		//UTF-8 Check
+	    $o .= (strtoupper($tx['meta']['codepage']) == 'UTF-8' ? $ok : $fail)
+		    .'&nbsp;&nbsp;'.$ptx['syscheck_encoding'].tag('br')."\n";
+		//Folder writable
+	    foreach ($equire_folders as $folder) {
+			$o .= (is_writable($folder) ? $ok : $warn)
+				.'&nbsp;&nbsp;'.sprintf($ptx['syscheck_writable'], $folder).tag('br')."\n";
+	    }
+		//File Check 
+	    foreach ($warn_files as $files) {
+			$o .= (file_exists($files) ? $warn : $ok)
+				.'&nbsp;&nbsp;'.sprintf($ptx['syscheck_removefile'], $files).tag('br')."\n";
+	    }
+	    return $o;
+	}
+
+
 }

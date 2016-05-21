@@ -1,191 +1,409 @@
-/*
- * Romanian translation
- * @author Serban George Cristian <cristian.serban@onetwist.com>
- * @version 2011-11-19
+/**
+ * Română translation
+ * @author Cristian Tabacitu <hello@tabacitu.ro>
+ * @version 2015-11-13
  */
-(function($) {
-if (elFinder && elFinder.prototype.options && elFinder.prototype.options.i18n) 
-	elFinder.prototype.options.i18n.ro = {
-		/* errors */
-		'Root directory does not exists'        : 'Directorul radacina nu exista',
-		'Unable to connect to backend'          : 'Nu este posibila conectarea la server',
-		'Access denied'                         : 'Acces interzis',
-		'Invalid backend configuration'         : 'Configurare server invalida',
-		'Unknown command'                       : 'Comanda necunoscuta',
-		'Command not allowed'                   : 'Comanda nepermisa',
-		'Invalid parameters'                    : 'Parametrii incorecti',
-		'File not found'                        : 'Fisierul nu a fost gasit',
-		'Invalid name'                          : 'Nume invalid',
-		'File or folder with the same name already exists' : 'Un director sau fisier cu acelasi nume exista deja',
-		'Unable to rename file'                 : 'Nu se poate redenumi fisierul',
-		'Unable to create folder'               : 'Nu se poate crea directorul',
-		'Unable to create file'                 : 'Nu se poate crea fisierul',  
-		'No file to upload'                     : 'Niciun fisier selectat pentru incarcare',
-		'Select at least one file to upload'    : 'Selecteaza cel putin un fisier pentru incarcare',
-		'File exceeds the maximum allowed filesize' : 'Fisierul depaseste marimea maxima admisa pentru incarcare',
-		'Data exceeds the maximum allowed size' : 'Datele depasesc marimea maxima admisa',
-		'Not allowed file type'                 : 'Tipul fisierului nu este permis',
-		'Unable to upload file'                 : 'Nu se poate incarca fisierul',
-		'Unable to upload files'                : 'Nu se pot incarca fisierele',
-		'Unable to remove file'                 : 'Nu se poate sterge fisierul',
-		'Unable to save uploaded file'          : 'Nu s-a putut salva fisierul urcat',
-		'Some files was not uploaded'           : 'Cateva fisiere nu au fost incarcate',
-		'Unable to copy into itself'            : 'Nu se poate copia in el',
-		'Unable to move files'                  : 'Nu se pot muta fiserele',
-		'Unable to copy files'                  : 'Nu se pot copia fisierele',
-		'Unable to create file copy'            : 'Nu se poate crea copia fisierului',
-		'File is not an image'                  : 'Fisierul nu este o imagine',
-		'Unable to resize image'                : 'Nu se poate redimensiona imaginea',
-		'Unable to write to file'               : 'Fisierul nu poate fii scris',
-		'Unable to create archive'              : 'Nu se poate crea arhiva',
-		'Unable to extract files from archive'  : 'Nu se pot extrage fisierele din arhiva',
-		'Unable to open broken link'            : 'Nu se poate deschide linkul',
-		'File URL disabled by connector config' : 'Adresa fisierului nu este permisa datorita configuratiei',
-		/* statusbar */
-		'items'          : 'obiecte',
-		'selected items' : 'obiecte selectate',
-		/* commands/buttons */
-		'Back'                    : 'Inapoi',
-		'Reload'                  : 'Reincarca',
-		'Open'                    : 'Deschide',
-		'Preview with Quick Look' : 'Vizualizeaza prin Quick Look',
-		'Select file'             : 'Selecteaza fisier',
-		'New folder'              : 'Director nou',
-		'New text file'           : 'Fisier text nou',
-		'Upload files'            : 'Incarca fisier',
-		'Copy'                    : 'Copiaza',
-		'Cut'                     : 'Taie',
-		'Paste'                   : 'Lipeste',
-		'Duplicate'               : 'Duplica',
-		'Remove'                  : 'Elimina',
-		'Rename'                  : 'Redenumeste',
-		'Edit text file'          : 'Editeaza fisier text',
-		'View as icons'           : 'Vezi ca icoane',
-		'View as list'            : 'Vezi ca lista',
-		'Resize image'            : 'Redimensioneaza imagine',
-		'Create archive'          : 'Creaza arhiva',
-		'Uncompress archive'      : 'Dezarhiveaza arhiva',
-		'Get info'                : 'Arata informatii',
-		'Help'                    : 'Ajutor',
-		'Dock/undock filemanager window' : 'Separa/de-separa fereastra managerului de fisiere',
-		/* upload/get info dialogs */
-		'Maximum allowed files size' : 'Marimea maxima permisa pentru fisiere',
-		'Add field'   : 'Adauga camp',
-		'File info'   : 'Informatii fisier',
-		'Folder info' : 'Informatii director',
-		'Name'        : 'Nume',
-		'Kind'        : 'Tip',
-		'Size'        : 'Marime',
-		'Modified'    : 'Modificat',
-		'Permissions' : 'Permisiuni',
-		'Link to'     : 'Legatura la',
-		'Dimensions'  : 'Dimenisuni',
-		'Confirmation required' : 'Confirmare necesara',
-		'Are you sure you want to remove files?<br /> This cannot be undone!' : 'Esti sigur ca doresti sa stergi fisierele? <br />Aceasta actiune este ireversibila',
-		/* permissions */
-		'read'        : 'citeste',
-		'write'       : 'scrie',
-		'remove'      : 'sterge',
-		/* dates */
-		'Jan'         : 'Ian',
-		'Feb'         : 'Feb',
-		'Mar'         : 'Mar',
-		'Apr'         : 'Apr',
-		'May'         : 'Mai',
-		'Jun'         : 'Iun',
-		'Jul'         : 'Iul',
-		'Aug'         : 'Aug',
-		'Sep'         : 'Sep',
-		'Oct'         : 'Oct',
-		'Nov'         : 'Noi',
-		'Dec'         : 'Dec',
-		'Today'       : 'Azi',
-		'Yesterday'   : 'Ieri',
-		/* mimetypes */
-		'Unknown'                           : 'Necunoscut',
-		'Folder'                            : 'Director',
-		'Alias'                             : 'Alias',
-		'Broken alias'                      : 'Alias invalid',
-		'Plain text'                        : 'Text',
-		'Postscript document'               : 'Document postscript',
-		'Application'                       : 'Aplicatie',
-		'Microsoft Office document'         : 'Document Microsoft Office',
-		'Microsoft Word document'           : 'Document Microsoft Word',  
-		'Microsoft Excel document'          : 'Document Microsoft Excel',
-		'Microsoft Powerpoint presentation' : 'Document Microsoft Powerpoint',
-		'Open Office document'              : 'Document Open Office',
-		'Flash application'                 : 'Aplicatie Flash',
-		'XML document'                      : 'Document XML',
-		'Bittorrent file'                   : 'Fisier bittorrent',
-		'7z archive'                        : 'Arhiva 7z',
-		'TAR archive'                       : 'Arhiva TAR',
-		'GZIP archive'                      : 'Arhiva GZIP',
-		'BZIP archive'                      : 'Arhiva BZIP',
-		'ZIP archive'                       : 'Arhiva ZIP',
-		'RAR archive'                       : 'Arhiva RAR',
-		'Javascript application'            : 'Aplicatie Javascript',
-		'PHP source'                        : 'Document PHP',
-		'HTML document'                     : 'Document HTML',
-		'Javascript source'                 : 'Document Javascript',
-		'CSS style sheet'                   : 'Document CSS',
-		'C source'                          : 'Document C',
-		'C++ source'                        : 'Document C++',
-		'Unix shell script'                 : 'Script Unix shell',
-		'Python source'                     : 'Document Python',
-		'Java source'                       : 'Document Java',
-		'Ruby source'                       : 'Document Ruby',
-		'Perl script'                       : 'Script Perl',
-		'BMP image'                         : 'Imagine BMP',
-		'JPEG image'                        : 'Imagine JPEG',
-		'GIF Image'                         : 'Imagine GIF',
-		'PNG Image'                         : 'Imagine PNG',
-		'TIFF image'                        : 'Imagine TIFF',
-		'TGA image'                         : 'Imagine TGA',
-		'Adobe Photoshop image'             : 'Imagine Adobe Photoshop',
-		'MPEG audio'                        : 'Audio MPEG',
-		'MIDI audio'                        : 'Audio MIDI',
-		'Ogg Vorbis audio'                  : 'Audio Ogg Vorbis',
-		'MP4 audio'                         : 'Audio MP4',
-		'WAV audio'                         : 'Audio WAV',
-		'DV video'                          : 'Video DV',
-		'MP4 video'                         : 'Video MP4',
-		'MPEG video'                        : 'Video MPEG',
-		'AVI video'                         : 'Video AVI',
-		'Quicktime video'                   : 'Video Quicktime',
-		'WM video'                          : 'Video WM',
-		'Flash video'                       : 'Video Flash',
-		'Matroska video'                    : 'Video Matroska',
-		// 'Shortcuts' : '???????',		
-		'Select all files' : 'Selecteaza toate fiserele',
-		'Copy/Cut/Paste files' : 'Copiaza/Taie/Lipeste fisierele',
-		'Open selected file/folder' : 'Deschide fisierul/directorul selectat',
-		'Open/close QuickLook window' : 'Deschide/Inchide fereastra Quick Look',
-		'Remove selected files' : 'Sterge fisierele selectate',
-		'Selected files or current directory info' : 'Fisierele selectate sau informatii descre directorul curent',
-		'Create new directory' : 'Creaza director nou',
-		'Open upload files form' : 'Deschide formularul pentru incarcare fisiere',
-		'Select previous file' : 'Selecteaza fisierul anterior',
-		'Select next file' : 'Selecteaza fisierul urmator',
-		'Return into previous folder' : 'Intoarce-te la directorul anterior',
-		'Increase/decrease files selection' : 'Creste/Scade selectia fisierelor',
-		'Authors'                       : 'Autori',
-		'Sponsors'  : 'Colaboratori',
-		'elFinder: Web file manager'    : 'elFinder: Manager Fisiere Web',
-		'Version'                       : 'Versiune',
-		'Copyright: Studio 42 LTD'      : 'Drepturi de autor: Studio 42',
-		'Donate to support project development' : 'Doneaza pentru a ajuta proiectul',
-		'Javascripts/PHP programming: Dmitry (dio) Levashov, dio@std42.ru' : 'Programare Javascript/PHP: Dmitry (dio) Levashov, dio@std42.ru',
-		'Python programming, techsupport: Troex Nevelin, troex@fury.scancode.ru' : 'Programare Python, suport tehnic: Troex Nevelin, troex@fury.scancode.ru',
-		'Design: Valentin Razumnih'     : 'Design: Valentin Razumnyh',
-		'Romanian localization'          : 'Traducere in romana: ',
-		'Icons' : 'Icoane',
-		'License: BSD License'          : 'Licenta: BSD License',
-		'elFinder documentation'        : 'Documentatie elFinder',
-		'Simple and usefull Content Management System' : 'Un CMS simplu si folositor',
-		'Support project development and we will place here info about you' : 'Ajuta dezvoltarea proiectului si vom pune informatii despre tine aici.',
-		'Contacts us if you need help integrating elFinder in you products' : 'Contactati-ne daca aveti nevoie de ajutor pentru integrarea elFinder in produsele dvs.',
-		'elFinder support following shortcuts' : 'elFinder suporta urmatoarele scurtaturi',
-		'helpText' : 'elFinder functioneaza similar unui manager de fisiere pentru PC. <br />Pentru a executa actiuni asupra fisierelor, folositi panoul de sus. Daca icoana nu este clara pentru tine, tine cursorul peste ea pentru a vedea descrierea.<br />Manipularea fisierelor/directoarelor existente se poate face cu ajutorul meniului contextual(mouse click-dreapta).<br />Pentru a copia/sterge un grup de fisiere/directoare, selecteaza-le folosind Shift/Alt + mouse click-stanga.'	
-		};
-	
-})(jQuery);
+if (elFinder && elFinder.prototype && typeof(elFinder.prototype.i18) == 'object') {
+	elFinder.prototype.i18.ro = {
+		translator : 'Cristian Tabacitu &lt;hello@tabacitu.ro&gt;',
+		language   : 'Română',
+		direction  : 'ltr',
+		dateFormat : 'd M Y h:i', // Mar 13, 2012 05:27 PM
+		fancyDateFormat : '$1 h:i A', // will produce smth like: Today 12:25 PM
+		messages   : {
+
+			/********************************** errors **********************************/
+			'error'                : 'Eroare',
+			'errUnknown'           : 'Eroare necunoscută.',
+			'errUnknownCmd'        : 'Comandă necunoscuta.',
+			'errJqui'              : 'Configurație jQuery UI necunoscută. Componentele selectable, draggable și droppable trebuie să fie incluse.',
+			'errNode'              : 'elFinder necesită ca DOM Element să fie creat.',
+			'errURL'               : 'Configurație elFinder nevalidă! URL option nu este setat.',
+			'errAccess'            : 'Acces interzis.',
+			'errConnect'           : 'Nu ne-am putut conecta la backend.',
+			'errAbort'             : 'Conexiunea a fost oprită.',
+			'errTimeout'           : 'Conexiunea a fost întreruptă.',
+			'errNotFound'          : 'Nu am gasit backend-ul.',
+			'errResponse'          : 'Răspuns backend greșit.',
+			'errConf'              : 'Configurație backend greșită.',
+			'errJSON'              : 'Modulul PHP JSON nu este instalat.',
+			'errNoVolumes'         : 'Volumele citibile nu sunt disponibile.',
+			'errCmdParams'         : 'Parametri greșiți pentru comanda "$1".',
+			'errDataNotJSON'       : 'Datele nu sunt în format JSON.',
+			'errDataEmpty'         : 'Datele sunt goale.',
+			'errCmdReq'            : 'Cererea către backend necesită un nume de comandă.',
+			'errOpen'              : 'Nu am putut deschide "$1".',
+			'errNotFolder'         : 'Obiectul nu este un dosar.',
+			'errNotFile'           : 'Obiectul nu este un fișier.',
+			'errRead'              : 'Nu am putut citi "$1".',
+			'errWrite'             : 'Nu am putu scrie în "$1".',
+			'errPerm'              : 'Nu ai permisiunea necesară.',
+			'errLocked'            : '"$1" este blocat și nu poate fi redenumit, mutat sau șters.',
+			'errExists'            : 'Un fișier cu numele "$1" există deja.',
+			'errInvName'           : 'Numele pentru fișier este greșit.',
+			'errFolderNotFound'    : 'Nu am găsit dosarul.',
+			'errFileNotFound'      : 'Nu am găsit fișierul.',
+			'errTrgFolderNotFound' : 'Nu am găsit dosarul pentru destinație "$1".',
+			'errPopup'             : 'Browserul tău a prevenit deschiderea ferestrei popup. Pentru a deschide fișierul permite deschidere ferestrei.',
+			'errMkdir'             : 'Nu am putut crea dosarul "$1".',
+			'errMkfile'            : 'Nu am putut crea fișierul "$1".',
+			'errRename'            : 'Nu am putut redenumi "$1".',
+			'errCopyFrom'          : 'Copierea fișierelor de pe volumul "$1" este interzisă.',
+			'errCopyTo'            : 'Copierea fișierelor către volumul "$1" este interzisă.',
+			'errMkOutLink'         : 'Nu am putut crea linkul în afara volumului rădăcină.', // from v2.1 added 03.10.2015
+			'errUpload'            : 'Eroare de upload.',  // old name - errUploadCommon
+			'errUploadFile'        : 'Nu am putut urca "$1".', // old name - errUpload
+			'errUploadNoFiles'     : 'Nu am găsit fișiere pentru a le urca.',
+			'errUploadTotalSize'   : 'Datele depâșest limita maximă de mărime.', // old name - errMaxSize
+			'errUploadFileSize'    : 'Fișierul este prea mare.', //  old name - errFileMaxSize
+			'errUploadMime'        : 'Acest tip de fișier nu este permis.',
+			'errUploadTransfer'    : 'Eroare la transferarea "$1".',
+			'errUploadTemp'        : 'Nu am putut crea fișierul temporar pentru upload.', // from v2.1 added 26.09.2015
+			'errNotReplace'        : 'Obiectul "$1" există deja în acest loc și nu poate fi înlocuit de un obiect de alt tip.', // new
+			'errReplace'           : 'Nu am putut înlocui "$1".',
+			'errSave'              : 'Nu am putut salva "$1".',
+			'errCopy'              : 'Nu am putut copia "$1".',
+			'errMove'              : 'Nu am putut muta "$1".',
+			'errCopyInItself'      : 'Nu am putut copia "$1" în el însuși.',
+			'errRm'                : 'Nu am putut șterge "$1".',
+			'errRmSrc'             : 'Nu am putut șterge fișierul sursă.',
+			'errExtract'           : 'Nu am putut extrage fișierele din "$1".',
+			'errArchive'           : 'Nu am putut crea arhiva.',
+			'errArcType'           : 'Arhiva este de un tip nesuportat.',
+			'errNoArchive'         : 'Fișierul nu este o arhiva sau este o arhivă de un tip necunoscut.',
+			'errCmdNoSupport'      : 'Backend-ul nu suportă această comandă.',
+			'errReplByChild'       : 'Dosarul “$1” nu poate fi înlocuit de un element pe care el îl conține.',
+			'errArcSymlinks'       : 'Din motive de securitate, arhiva nu are voie să conțină symlinks sau fișiere cu nume interzise.', // edited 24.06.2012
+			'errArcMaxSize'        : 'Fișierul arhivei depășește mărimea maximă permisă.',
+			'errResize'            : 'Nu am putut redimensiona "$1".',
+			'errResizeDegree'      : 'Grad de rotație nevalid.',  // added 7.3.2013
+			'errResizeRotate'      : 'Imaginea nu a fost rotită.',  // added 7.3.2013
+			'errResizeSize'        : 'Mărimea imaginii este nevalidă.',  // added 7.3.2013
+			'errResizeNoChange'    : 'Mărimea imaginii nu a fost schimbată.',  // added 7.3.2013
+			'errUsupportType'      : 'Tipul acesta de fișier nu este suportat.',
+			'errNotUTF8Content'    : 'Fișierul "$1" nu folosește UTF-8 și nu poate fi editat.',  // added 9.11.2011
+			'errNetMount'          : 'Nu am putut încărca "$1".', // added 17.04.2012
+			'errNetMountNoDriver'  : 'Protocol nesuportat.',     // added 17.04.2012
+			'errNetMountFailed'    : 'Încărcare eșuată.',         // added 17.04.2012
+			'errNetMountHostReq'   : 'Gazda este necesară.', // added 18.04.2012
+			'errSessionExpires'    : 'Sesiunea a expirat datorită lipsei de activitate.',
+			'errCreatingTempDir'   : 'Nu am putut crea fișierul temporar: "$1"',
+			'errFtpDownloadFile'   : 'Nu am putut descarca fișierul de pe FTP: "$1"',
+			'errFtpUploadFile'     : 'Nu am putut încărca fișierul pe FTP: "$1"',
+			'errFtpMkdir'          : 'Nu am putut crea acest dosar pe FTP: "$1"',
+			'errArchiveExec'       : 'Eroare la arhivarea fișierelor: "$1"',
+			'errExtractExec'       : 'Eroare la dezarhivarea fișierelor: "$1"',
+			'errNetUnMount'        : 'Nu am putut elimina volumul', // from v2.1 added 30.04.2012
+			'errConvUTF8'          : 'Nu poate fi convertit la UTF-8', // from v2.1 added 08.04.2014
+			'errFolderUpload'      : 'Pentru a urca dosare încearcă Google Chrome.', // from v2.1 added 26.6.2015
+
+			/******************************* commands names ********************************/
+			'cmdarchive'   : 'Creeaza arhivă',
+			'cmdback'      : 'Înapoi',
+			'cmdcopy'      : 'Copiază',
+			'cmdcut'       : 'Taie',
+			'cmddownload'  : 'Descarcă',
+			'cmdduplicate' : 'Creează duplicat',
+			'cmdedit'      : 'Modifică fișier',
+			'cmdextract'   : 'Extrage fișierele din arhivă',
+			'cmdforward'   : 'Înainte',
+			'cmdgetfile'   : 'Alege fișiere',
+			'cmdhelp'      : 'Despre acest software',
+			'cmdhome'      : 'Acasă',
+			'cmdinfo'      : 'Informații',
+			'cmdmkdir'     : 'Dosar nou',
+			'cmdmkfile'    : 'Fișier text nou',
+			'cmdopen'      : 'Deschide',
+			'cmdpaste'     : 'Lipește',
+			'cmdquicklook' : 'Previzualizează',
+			'cmdreload'    : 'Reîncarcă',
+			'cmdrename'    : 'Redenumește',
+			'cmdrm'        : 'Șterge',
+			'cmdsearch'    : 'Găsește fișiere',
+			'cmdup'        : 'Mergi la dosarul părinte',
+			'cmdupload'    : 'Urcă fișiere',
+			'cmdview'      : 'Vezi',
+			'cmdresize'    : 'Redimensionează & rotește',
+			'cmdsort'      : 'Sortează',
+			'cmdnetmount'  : 'Încarcă volum din rețea', // added 18.04.2012
+			'cmdnetunmount': 'Elimină volum', // from v2.1 added 30.04.2012
+			'cmdplaces'    : 'La Locuri', // added 28.12.2014
+			'cmdchmod'     : 'Schimbă mod', // from v2.1 added 20.6.2015
+
+			/*********************************** buttons ***********************************/
+			'btnClose'  : 'Închide',
+			'btnSave'   : 'Salvează',
+			'btnRm'     : 'Șterge',
+			'btnApply'  : 'Aplică',
+			'btnCancel' : 'Anulează',
+			'btnNo'     : 'Nu',
+			'btnYes'    : 'Da',
+			'btnMount'  : 'Încarcă',  // added 18.04.2012
+			'btnApprove': 'Mergi la $1 și aprobă', // from v2.1 added 26.04.2012
+			'btnUnmount': 'Elimină volum', // from v2.1 added 30.04.2012
+			'btnConv'   : 'Convertește', // from v2.1 added 08.04.2014
+			'btnCwd'    : 'Aici',      // from v2.1 added 22.5.2015
+			'btnVolume' : 'Volum',    // from v2.1 added 22.5.2015
+			'btnAll'    : 'Toate',       // from v2.1 added 22.5.2015
+			'btnMime'   : 'Tipuri MIME', // from v2.1 added 22.5.2015
+			'btnFileName':'Nume fișier',  // from v2.1 added 22.5.2015
+			'btnSaveClose': 'Salvează și închide', // from v2.1 added 12.6.2015
+
+			/******************************** notifications ********************************/
+			'ntfopen'     : 'Deschide dosar',
+			'ntffile'     : 'Deschide fișier',
+			'ntfreload'   : 'Actualizează conținutul dosarului',
+			'ntfmkdir'    : 'Se creează dosarul',
+			'ntfmkfile'   : 'Se creează fișierele',
+			'ntfrm'       : 'Șterge fișiere',
+			'ntfcopy'     : 'Copiază fișiere',
+			'ntfmove'     : 'Mută fișiere',
+			'ntfprepare'  : 'Pregătește copierea fișierelor',
+			'ntfrename'   : 'Redenumește fișiere',
+			'ntfupload'   : 'Se urcă fișierele',
+			'ntfdownload' : 'Se descarcă fișierele',
+			'ntfsave'     : 'Salvează fișiere',
+			'ntfarchive'  : 'Se creează arhiva',
+			'ntfextract'  : 'Se extrag fișierele din arhivă',
+			'ntfsearch'   : 'Se caută fișierele',
+			'ntfresize'   : 'Se redimnesionează imaginile',
+			'ntfsmth'     : 'Se întamplă ceva',
+			'ntfloadimg'  : 'Se încarcă imaginea',
+			'ntfnetmount' : 'Se încarcă volumul din rețea', // added 18.04.2012
+			'ntfnetunmount': 'Se elimină volumul din rețea', // from v2.1 added 30.04.2012
+			'ntfdim'      : 'Se preiau dimensiunile imaginii', // added 20.05.2013
+			'ntfreaddir'  : 'Se citesc informațiile dosarului', // from v2.1 added 01.07.2013
+			'ntfurl'      : 'Se preia URL-ul din link', // from v2.1 added 11.03.2014
+			'ntfchmod'    : 'Se schimba modul de fișier', // from v2.1 added 20.6.2015
+
+			/************************************ dates **********************************/
+			'dateUnknown' : 'necunoscută',
+			'Today'       : 'Astăzi',
+			'Yesterday'   : 'Ieri',
+			'msJan'       : 'Ian',
+			'msFeb'       : 'Feb',
+			'msMar'       : 'Mar',
+			'msApr'       : 'Apr',
+			'msMay'       : 'Mai',
+			'msJun'       : 'Iun',
+			'msJul'       : 'Iul',
+			'msAug'       : 'Aug',
+			'msSep'       : 'Sep',
+			'msOct'       : 'Oct',
+			'msNov'       : 'Nov',
+			'msDec'       : 'Dec',
+			'January'     : 'Ianuarie',
+			'February'    : 'Februarie',
+			'March'       : 'Martie',
+			'April'       : 'Aprilie',
+			'May'         : 'Mai',
+			'June'        : 'Iunie',
+			'July'        : 'Iulie',
+			'August'      : 'August',
+			'September'   : 'Septembrie',
+			'October'     : 'Octombrie',
+			'November'    : 'Noiembrie',
+			'December'    : 'Decembrie',
+			'Sunday'      : 'Duminică',
+			'Monday'      : 'Luni',
+			'Tuesday'     : 'Marți',
+			'Wednesday'   : 'Miercuri',
+			'Thursday'    : 'Joi',
+			'Friday'      : 'Vineri',
+			'Saturday'    : 'Sâmbătă',
+			'Sun'         : 'Du',
+			'Mon'         : 'Lu',
+			'Tue'         : 'Ma',
+			'Wed'         : 'Mi',
+			'Thu'         : 'Jo',
+			'Fri'         : 'Vi',
+			'Sat'         : 'Sâ',
+
+			/******************************** sort variants ********************************/
+			'sortname'          : 'după nume',
+			'sortkind'          : 'după tip',
+			'sortsize'          : 'după mărime',
+			'sortdate'          : 'după dată',
+			'sortFoldersFirst'  : 'Dosarele primele',
+
+			/********************************** new items **********************************/
+			'untitled file.txt' : 'FisierNou.txt', // added 10.11.2015
+			'untitled folder'   : 'DosarNou',   // added 10.11.2015
+			'Archive'           : 'ArhivaNoua',  // from v2.1 added 10.11.2015
+
+			/********************************** messages **********************************/
+			'confirmReq'      : 'Este necesară confirmare',
+			'confirmRm'       : 'Ești sigur că vrei să ștergi fișierele?<br/>Acțiunea este ireversibilă!',
+			'confirmRepl'     : 'Înlocuiește fișierul vechi cu cel nou?',
+			'confirmConvUTF8' : 'Nu este în UTF-8<br/>Convertim la UTF-8?<br/>Conținutul devine UTF-8 după salvarea conversiei.', // from v2.1 added 08.04.2014
+			'confirmNotSave'  : 'Au avut loc modificări.<br/>Dacă nu salvezi se vor pierde modificările.', // from v2.1 added 15.7.2015
+			'apllyAll'        : 'Aplică pentru toate',
+			'name'            : 'Nume',
+			'size'            : 'Mărime',
+			'perms'           : 'Permisiuni',
+			'modify'          : 'Modificat la',
+			'kind'            : 'Tip',
+			'read'            : 'citire',
+			'write'           : 'scriere',
+			'noaccess'        : 'acces interzis',
+			'and'             : 'și',
+			'unknown'         : 'necunoscut',
+			'selectall'       : 'Alege toate fișierele',
+			'selectfiles'     : 'Alege fișier(e)',
+			'selectffile'     : 'Alege primul fișier',
+			'selectlfile'     : 'Alege ultimul fișier',
+			'viewlist'        : 'Vezi ca listă',
+			'viewicons'       : 'Vezi ca icoane',
+			'places'          : 'Locuri',
+			'calc'            : 'Calculează',
+			'path'            : 'Cale',
+			'aliasfor'        : 'Alias pentru',
+			'locked'          : 'Securizat',
+			'dim'             : 'Dimensiuni',
+			'files'           : 'Fișiere',
+			'folders'         : 'Dosare',
+			'items'           : 'Elemente',
+			'yes'             : 'da',
+			'no'              : 'nu',
+			'link'            : 'Link',
+			'searcresult'     : 'Rezultatele căutării',
+			'selected'        : 'elemente alese',
+			'about'           : 'Despre',
+			'shortcuts'       : 'Scurtături',
+			'help'            : 'Ajutor',
+			'webfm'           : 'Manager web pentru fișiere',
+			'ver'             : 'Versiune',
+			'protocolver'     : 'versiune protocol',
+			'homepage'        : 'Pagina proiectului',
+			'docs'            : 'Documentație',
+			'github'          : 'Fork nou pe Github',
+			'twitter'         : 'Urmărește-ne pe twitter',
+			'facebook'        : 'Alătura-te pe facebook',
+			'team'            : 'Echipa',
+			'chiefdev'        : 'chief developer',
+			'developer'       : 'developer',
+			'contributor'     : 'contributor',
+			'maintainer'      : 'maintainer',
+			'translator'      : 'translator',
+			'icons'           : 'Icoane',
+			'dontforget'      : 'și nu uita să-ți iei prosopul',
+			'shortcutsof'     : 'Scurtăturile sunt dezactivate',
+			'dropFiles'       : 'Dă drumul fișierelor aici',
+			'or'              : 'sau',
+			'selectForUpload' : 'Alege fișiere pentru a le urca',
+			'moveFiles'       : 'Mută fișiere',
+			'copyFiles'       : 'Copiază fișiere',
+			'rmFromPlaces'    : 'Șterge din locuri',
+			'aspectRatio'     : 'Aspect ratio',
+			'scale'           : 'Scală',
+			'width'           : 'Lățime',
+			'height'          : 'Înălțime',
+			'resize'          : 'Redimensionează',
+			'crop'            : 'Decupează',
+			'rotate'          : 'Rotește',
+			'rotate-cw'       : 'Rotește cu 90° în sensul ceasului',
+			'rotate-ccw'      : 'Rotește cu 90° în sensul invers ceasului',
+			'degree'          : '°',
+			'netMountDialogTitle' : 'Încarcă volum din rețea', // added 18.04.2012
+			'protocol'            : 'Protocol', // added 18.04.2012
+			'host'                : 'Gazdă', // added 18.04.2012
+			'port'                : 'Port', // added 18.04.2012
+			'user'                : 'Utilizator', // added 18.04.2012
+			'pass'                : 'Parolă', // added 18.04.2012
+			'confirmUnmount'      : 'Vrei să elimini volumul $1?',  // from v2.1 added 30.04.2012
+			'dropFilesBrowser': 'Drag&drop sau lipește din browser', // from v2.1 added 30.05.2012
+			'dropPasteFiles'  : 'Drag&drop sau lipește fișiere aici', // from v2.1 added 07.04.2014
+			'encoding'        : 'Encodare', // from v2.1 added 19.12.2014
+			'locale'          : 'Locale',   // from v2.1 added 19.12.2014
+			'searchTarget'    : 'Țintă: $1',                // from v2.1 added 22.5.2015
+			'searchMime'      : 'Caută după tipul MIME', // from v2.1 added 22.5.2015
+			'owner'           : 'Owner', // from v2.1 added 20.6.2015
+			'group'           : 'Group', // from v2.1 added 20.6.2015
+			'other'           : 'Other', // from v2.1 added 20.6.2015
+			'execute'         : 'Execute', // from v2.1 added 20.6.2015
+			'perm'            : 'Permission', // from v2.1 added 20.6.2015
+			'mode'            : 'Mod', // from v2.1 added 20.6.2015
+
+			/********************************** mimetypes **********************************/
+			'kindUnknown'     : 'Necunoscut',
+			'kindFolder'      : 'Dosar',
+			'kindAlias'       : 'Alias',
+			'kindAliasBroken' : 'Alias stricat',
+			// applications
+			'kindApp'         : 'Aplicație',
+			'kindPostscript'  : 'Document Postscript',
+			'kindMsOffice'    : 'Document Microsoft Office',
+			'kindMsWord'      : 'Document Microsoft Word',
+			'kindMsExcel'     : 'Document Microsoft Excel',
+			'kindMsPP'        : 'Prezentare Microsoft Powerpoint',
+			'kindOO'          : 'Document Open Office',
+			'kindAppFlash'    : 'Aplicație Flash',
+			'kindPDF'         : 'Document Portabil (PDF)',
+			'kindTorrent'     : 'Fișier Bittorrent',
+			'kind7z'          : 'Arhivă 7z',
+			'kindTAR'         : 'Arhivă TAR',
+			'kindGZIP'        : 'Arhivă GZIP',
+			'kindBZIP'        : 'Arhivă BZIP',
+			'kindXZ'          : 'Arhivă XZ',
+			'kindZIP'         : 'Arhivă ZIP',
+			'kindRAR'         : 'Arhivă RAR',
+			'kindJAR'         : 'Fișier Java JAR',
+			'kindTTF'         : 'Font True Type',
+			'kindOTF'         : 'Font Open Type',
+			'kindRPM'         : 'Pachet RPM',
+			// texts
+			'kindText'        : 'Document text',
+			'kindTextPlain'   : 'Text simplu',
+			'kindPHP'         : 'Sursă PHP',
+			'kindCSS'         : 'Fișier de stil (CSS)',
+			'kindHTML'        : 'Document HTML',
+			'kindJS'          : 'Sursă Javascript',
+			'kindRTF'         : 'Text formatat (rich text)',
+			'kindC'           : 'Sursă C',
+			'kindCHeader'     : 'Sursă C header',
+			'kindCPP'         : 'Sursă C++',
+			'kindCPPHeader'   : 'Sursă C++ header',
+			'kindShell'       : 'Script terminal Unix',
+			'kindPython'      : 'Sursă Python',
+			'kindJava'        : 'Sursă Java',
+			'kindRuby'        : 'Sursă Ruby',
+			'kindPerl'        : 'Script Perl',
+			'kindSQL'         : 'Sursă SQL',
+			'kindXML'         : 'Document XML',
+			'kindAWK'         : 'Sursă AWK',
+			'kindCSV'         : 'Valori separate de virgulă (CSV)',
+			'kindDOCBOOK'     : 'Document Docbook XML',
+			'kindMarkdown'    : 'Text Markdown', // added 20.7.2015
+			// images
+			'kindImage'       : 'Imagine',
+			'kindBMP'         : 'Imagine BMP',
+			'kindJPEG'        : 'Imagine JPEG',
+			'kindGIF'         : 'Imagine GIF',
+			'kindPNG'         : 'Imagine PNG',
+			'kindTIFF'        : 'Imagine TIFF',
+			'kindTGA'         : 'Imagine TGA',
+			'kindPSD'         : 'Imagine Adobe Photoshop',
+			'kindXBITMAP'     : 'Imagine X bitmap',
+			'kindPXM'         : 'Imagine Pixelmator',
+			// media
+			'kindAudio'       : 'Audio',
+			'kindAudioMPEG'   : 'Audio MPEG',
+			'kindAudioMPEG4'  : 'Audio MPEG-4',
+			'kindAudioMIDI'   : 'Audio MIDI',
+			'kindAudioOGG'    : 'Audio Ogg Vorbis',
+			'kindAudioWAV'    : 'Audio WAV',
+			'AudioPlaylist'   : 'Playlist MP3',
+			'kindVideo'       : 'Video',
+			'kindVideoDV'     : 'Video DV',
+			'kindVideoMPEG'   : 'Video MPEG',
+			'kindVideoMPEG4'  : 'Video MPEG-4',
+			'kindVideoAVI'    : 'Video AVI',
+			'kindVideoMOV'    : 'Video Quick Time',
+			'kindVideoWM'     : 'Video Windows Media',
+			'kindVideoFlash'  : 'Video Flash',
+			'kindVideoMKV'    : 'Video Matroska',
+			'kindVideoOGG'    : 'Video Ogg'
+		}
+	};
+}
+

@@ -1,0 +1,212 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Enqueue_Xh Help </title>
+<link href="stylesheet.css" rel="stylesheet" type="text/css"><!--[if lte IE 7]>
+<style>
+.content { margin-right: -1px; } 
+ul.nav a { zoom: 1; }  
+</style>
+<![endif]-->
+</head>
+
+<body>
+
+<div class="container">
+  <div class="header"><a href="#"><img src="images/Elfinder_xh.png" width="140" height="140"></a> 
+    <!-- end .header --></div>
+  <div class="title">
+    Elfinder filebrowser Plugin for CMSimple
+  </div>
+  <div class="desc">
+    <p>The elFinder_XH prevents script and style conflicts.<br>To CMSimple_XH provide <a href="https://www.google.co.jp/search?q=Enqueue+wordpress"  target="_blank">WordPress Enqueue system</a> and equivalent function<br>
+    <span lang="en"></span></p>
+  </div>
+  <div class="clearfloat"></div>
+  <div class="sidebar1">
+    <ul class="nav">
+      <li><a href="help.htm#notice">Important Notice</a></li>
+        <li><a href="help.htm#requirements">Requirements</a></li>
+        <li><a href="help.htm#installation">Installation</a></li>
+        <li><a href="help.htm#settings">Settings</a></li>
+        <li><a href="help.htm#usage">Usage</a></li>
+        <li><a href="help.htm#limitations">Limitations</a></li>
+        <li><a href="help.htm#license">License</a></li>
+        <li><a href="help.htm#filelist">Function List</a></li></ul>
+  <!-- end .sidebar1 --></div>
+  <div class="content">
+    <div id="body">
+      <p><strong>Please do read this documentation, <em>before</em> you encounter any problems!</strong></p>
+      <h2><a name="notice">Important Notice</a></h2>
+      <p><strong>The current version is merely a draft. Everything might change, and  there may be severe bugs and limitations as it is barely tested. It is a so  called alpha version. Use with utmost caution!</strong></p>
+      <div>
+        <div align="right"><a href="help.htm#">back to top</a></div>
+      </div>
+      <h2><a name="requirements">Requirements</a></h2>
+      <p>Enqueue_Xh is a plugin for CMSimple_XH.  <br>
+        * Eecommend a combination of plugin Hook_XH
+      </p>
+
+      <p>&nbsp;</p>
+      <div>
+        <div align="right"><a href="help.htm#">back to top</a></div>
+      </div>
+      <h2><a name="installation">Installation</a></h2>
+      <p>The installation is done as with many other CMSimple_XH plugins.  See the <a href="http://www.cmsimple-xh.org/wiki/doku.php/installation"> CMSimple_XH wiki</a> for further details.</p>
+      <ol>
+        <li><strong>Backup the data on your server.</strong></li>
+        <li>Unzip the distribution on your computer.</li>
+        <li>Upload the whole directory to your server into the CMSimple_XH directory.
+        <br>
+        <ul>
+          <li>plugins/enqueue_xh/* ----&gt; plugins/enqueue_xh/*.</li>
+          <li>cmsimple/add_to_userfuncs.php ---&gt; cmsimple/userfuncs.php<br>
+          * if you have already have a userfuncs.php, please copy the source code. Very simple code.</li>
+        </ul>
+        </li>
+        <li>EDIT cmsimple/tplfuncs.php <br>
+<pre>function head()
+{
+    global $title, $cf, $pth, $tx, $hjs;
+
+    $t = XH_title($cf['site']['title'], $title);
+    $t = '<title>' . strip_tags($t) . '</title>' . "\n";
+    foreach (array_merge($cf['meta'], $tx['meta']) as $i => $k) {
+        $t .= meta($i);
+    }
+    $t = tag('meta http-equiv="content-type" content="text/html;charset=UTF-8"')
+        . "\n" . $t;
+    $plugins = implode(', ', XH_plugins());
+
+ /** Add Enqueue_xh St.******/
+//	This is Use Hook_XH .
+//	do_action( 'enqueue_scripts' );
+
+	ob_start();
+		print_styles();
+		$print_styles = ob_get_contents();
+	  ob_clean();
+		print_head_scripts();
+		$print_head_scripts = ob_get_contents();
+	ob_end_clean();
+ /** Add Enqueue_xh END.******/
+
+    return $t
+        . tag(
+            'meta name="generator" content="' . CMSIMPLE_XH_VERSION . ' '
+            . CMSIMPLE_XH_BUILD . ' - www.cmsimple-xh.org"'
+        ) . "\n"
+        . '<!-- plugins: ' . $plugins . ' -->' . "\n"
+        . XH_renderPrevLink() . XH_renderNextLink()
+        . tag(
+            'link rel="stylesheet" href="' . $pth['file']['corestyle']
+            . '" type="text/css"'
+        ) . "\n"
+        . tag(
+            'link rel="stylesheet" href="' . $pth['file']['stylesheet']
+            . '" type="text/css"'
+        ) . "\n"
+        . $print_styles . $print_head_scripts . $hjs ; // <--- Add Enqueue_xh
+}
+</pre>
+        </li>
+      </ol>
+      <h4>&nbsp;</h4>
+      <h4>Sample: Test enqueue_xh</h4>
+      <ol>
+        <li>Upload
+        <ul>
+          <li>Sample/plugins/dynamic_to_top_xh/* ---&gt; plugins/dynamic_to_top_xh/* <br>
+             * dynamic_to_top  is a simple plugins that were transplanted function only of the <a href="https://wordpress.org/plugins/dynamic-to-top/" target="_blank">Dynamic "To Top" Plugin </a>.Without admin setting.<br>
+             *If you improve the function, please contact the <a href="http://cmsimpleforum.com/" target="_blank">CMSiple_XH forum's.
+</li>
+        </ul>
+        </li>
+      </ol>
+      
+      <div>
+        <div align="right"><a href="help.htm#">back to top</a></div>
+      </div>
+      <h2><a name="settings">Settings</a></h2>
+      <p>Select &quot;Enqueue_xh&quot; from &quot;Plugins&quot;.</p>
+      <ol>
+      </ol>
+      <ol>
+        <li>"config" select ,set <span id="result_box" lang="en">true / false</span>.
+        </li>
+      </ol>
+      <div>
+        <div align="right"><a href="help.htm#">back to top</a></div>
+      </div>
+      <h2><a name="usage">Usage</a></h2>
+      <p>See </p>
+      <ul>
+        <li><a href="https://www.google.co.jp/search?q=Enqueue+wordpress"  target="_blank">WordPress Enqueue system</a></li>
+        <li><a href="https://wordpress.org/search/Enqueue+?forums=1"  target="_blank">WordPress Enqueue</a></li>
+        <li></li>
+      </ul>
+      <div>
+        <div align="right"><a href="help.htm#">back to top</a></div>
+      </div>
+      <h2><a name="limitations">Limitations</a></h2>
+      <blockquote>
+  <p>.</p>
+</blockquote>
+      <div>
+        <div align="right"><a href="help.htm#">back to top</a></div>
+      </div>
+      <h2><a name="license">License</a></h2>
+      <ul>
+        <li></li>
+        <li>Software License terms<br>
+         <a href="http://www.gnu.org/licenses/gpl.html" target="_blank">GPLv2</a>.</li>
+      </ul>
+      <p>© 2015 T. Uchiyama</p>
+      <div>
+        <div align="right"><a href="help.htm#">back to top</a></div>
+      </div>
+      <h2>&nbsp;</h2>
+      <div></div>
+    </div>
+    <h1><a id="filelist"></a> Function List</h1>
+    <p>How to use. It is equivalent to the function of wordpress. <br>The stinking looking it with a <b>wp_ </b>.<br> For example, please look for it enqueue_script ==><a href="https://developer.wordpress.org/reference/functions/wp_enqueue_script/wp_enqueue_script"  target="_blank">wp_enqueue_script</a> <hr>
+    <p class="filelist">
+/** enqueue_xh/functions.enqueue_scripts.php **/<br>
+<pre>
+global $xh_scripts;
+
+ print_scripts( $handles = false )
+ register_script( $handle, $src, $deps = array(), $ver = false, $in_footer = false ) 
+ localize_script( $handle, $object_name, $l10n )
+ deregister_script( $handle )
+ enqueue_script( $handle, $src = false, $deps = array(), $ver = false, $in_footer = false ) 
+ dequeue_script( $handle )
+ script_is( $handle, $list = 'enqueued' )
+ script_add_data( $handle, $key, $value ){
+ print_head_scripts()
+ print_footer_scripts
+</pre>
+/** enqueue_xh/functions.enqueue_styles.php **/<br>
+<pre>
+global $xh_styles;
+
+ print_styles( $handles = false )
+ add_inline_style( $handle, $data )
+ add_inline_style( $handle, $data )
+ deregister_style( $handle )
+ enqueue_style( $handle, $src = false, $deps = array(), $ver = false, $media = 'all' )
+ dequeue_style( $handle )
+ style_is( $handle, $list = 'enqueued' )
+ style_add_data( $handle, $key, $value )
+</pre>
+<br>
+    </p>
+    <p>&nbsp;</p>
+    <!-- end .content --></div>
+  <div class="footer">
+    <p align="center"><a href="http://cmsimple-jp.org" target="_blank">CMSimple-jp.org</a></p>
+    <!-- end .footer --></div>
+  <!-- end .container --></div>
+</body>
+</html>

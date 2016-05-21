@@ -1,24 +1,15 @@
 /*
- * Backend style.
- * No changes needed.
+ * Custom CSS 
+ * Your Custom Style ...
  */
 
-.elfinder-head {
-	margin-bottom: .5em;
+/* example ***
+.elfinder * {
+    font-family: inherit;
 }
-.elfinder-help, .elfinder-notice {
-	padding: .8em .8em .8em 2.6em;
-	margin-top: .5em;
-	margin-bottom: .5em;
-	border: 2px solid #ddd;
+
+.ui-widget-header {
+    background: #fa9300 url("images/example_bg.png") repeat scroll 50% 50% !important;
 }
-.elfinder-help {
-	color: #3E6DB1;
-	border-color: #3E6DB1;
-	background: #BDCDE3 url('../images/help.png') scroll no-repeat .8em .8em;
-}
-.elfinder-notice {
-	background:#FFF6BF;
-	color:#514721;
-	border-color:#FFD324;
-}
+
+****/

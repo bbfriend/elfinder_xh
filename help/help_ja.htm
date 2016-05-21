@@ -1,0 +1,266 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Enqueue_Xh Help </title>
+<link href="stylesheet.css" rel="stylesheet" type="text/css"><!--[if lte IE 7]>
+<style>
+.content { margin-right: -1px; } 
+ul.nav a { zoom: 1; }  
+</style>
+<![endif]-->
+</head>
+
+<body>
+
+<div class="container">
+  <div class="header"><a href="#"><img src="images/Elfinder_xh.png" width="140" height="140"></a> 
+    <!-- end .header --></div>
+  <div class="title">
+    elFinder_XH filebrowser Plugin for CMSimple
+  </div>
+  <div class="desc">
+    <p>elFinder_XH は、Webベースのファイルマネージャ elFinderを CMSimple_XH用プラグインにしたものです。<br>elFinderそのものの動作や詳細は <a href="http://studio-42.github.io/elFinder/"  target="_blank">http://studio-42.github.io/elFinder/</a> で確認してください。<br>
+    <span lang="en"></span></p>
+  </div>
+  <div class="clearfloat"></div>
+  <div class="sidebar1">
+    <ul class="nav">
+        <li><a href="help.htm#feature">特徴</a></li>
+        <li><a href="help.htm#notice">重要事項</a></li>
+        <li><a href="help.htm#requirements">必要条件</a></li>
+        <li><a href="help.htm#installation">設置＆テスト</a></li>
+        <li><a href="help.htm#settings">Settings</a></li>
+        <li><a href="help.htm#update">Update</a></li>
+        <li><a href="help.htm#limitations">Limitations</a></li>
+        <li><a href="help.htm#license">License</a></li>
+        <li><a href="help.htm#filelist">Function List</a></li></ul>
+  <!-- end .sidebar1 --></div>
+  <div class="content">
+    <div id="body">
+      <p><strong>Please do read this documentation, <em>before</em> you encounter any problems!</strong></p>
+
+      <h2><a name="feature">特徴</a></h2>
+      <p>
+        <ul>
+		<li>elFinder 2.1.x  *<a href="http://studio-42.github.io/elFinder/" target="_blank">see demo</a></li>
+		<li>エディター対応：TinyMCE3/TinyMCE4/CKEditor </li>
+		<li>elFinderのプラグインを含む:AutoRotate/AutoResize/Watermark/Normalizer/Sanitizer</li>
+		<li>elFinderのテーマ含む：windows-10/moono/bootstrap</li>
+		<li>カスタム・スタイル</li>
+       </ul>
+      </p>
+      <div>
+        <div align="right"><a href="help.htm#">back to top</a></div>
+      </div>
+
+      <h2><a name="notice">Important Notice</a></h2>
+      <p><strong>The current version is merely a draft. Everything might change, and  there may be severe bugs and limitations as it is barely tested. It is a so  called alpha version. Use with utmost caution!</strong></p>
+      <div>
+        <div align="right"><a href="help.htm#">back to top</a></div>
+      </div>
+
+      <h2><a name="requirements">必要事項</a></h2>
+      <p>elFinder 2.1.x <br>
+        <ul>
+		<li>jQuery / jQuery UI<br>
+		jQuery 1.8.0+  jQuery UI 1.9.0+  However, we recommend newest version.</li>
+		<li>Client <br>
+		Modern browser. elFinder was tested in Firefox 12, Internet Explorer 8+, Safari 6, Opera 12 and Chrome 19</li>
+		<li>Server <br>
+		PHP 5.2以上 ( PHP 5.4以上を推奨) 、エクステンション GD または Imagick(imagemagick)が必要です</li>
+		<li>プラグイン <br>
+		プラグイン：Normalizerを使用するのであれば、PHP >= 5.3.0、<a href="https://pecl.php.net/package/intl" target="_blank"> PECL intl</a> >= 1.0.0 または <a href="https://pear.php.net/package/I18N_UnicodeNormalizer" target="_blank">Pear I18N_UnicodeNormalizer</a> が必要です</li>
+		</ul>
+      </p>
+
+      <p>&nbsp;</p>
+      <div>
+        <div align="right"><a href="help.htm#">back to top</a></div>
+      </div>
+      <h2><a name="installation">Installation</a></h2>
+      <p>The installation is done as with many other CMSimple_XH plugins.  See the <a href="http://www.cmsimple-xh.org/wiki/doku.php/installation"> CMSimple_XH wiki</a> for further details.</p>
+      <ol>
+        <li><strong>Backup the data on your server.</strong></li>
+        <li>Unzip the distribution on your computer.</li>
+        <li>Upload the whole directory to your server into the CMSimple_XH directory.
+        <br>
+			<ul>
+			  <li>plugins/elfinder_xh/* ----&gt; plugins/elfinder_xh/*.</li>
+			</ul>
+        </li>
+        <li>elFinder単体としてのテスト　<a href="https://github.com/Studio-42/elFinder#installation" target="_blank">参考</a><br>
+			<ol>
+			  <li> plugins/elfinder_xh/elfinder/php/connector.minimal.php<span style="color: #ff0000;font-weight: bold">-dist</span> を<br> plugins/elfinder_xh/elfinder/php/connector.minimal.php に変更</li>
+			  <li> plugins/elfinder_xh/elfinder/elfinder.<span style="color: #ff0000;font-weight: bold">html_</span> を<br> plugins/elfinder_xh/elfinder/elfinder.html に変更</li>
+			  <li>ブラウザを使用し URL： http://your site･･･/plugins/elfinder_xh/elfinder/elfinder.html でテスト</li>
+			</ol>
+        </li>
+        <li>テスト終了後､<br>
+		plugins/elfinder_xh/elfinder/php/connector.minimal.php <br>
+		plugins/elfinder_xh/elfinder/elfinder.html の２つを削除（または、推測されない名称に変更）
+
+      </ol>
+      <h2><a name="settings">Settings</a></h2>
+      <p>管理画面で　&quot;Plugins&quot;メニューより &quot;Elfinder_xh&quot;.</p>
+       <img src="images/config.gif">
+      <ol>
+        <li>Interface
+			<ul>
+				<li>Width : 操作画面の 幅（単位:px または auto )</li>
+				<li>Height : 操作画面の 高さ (単位:px)</li>
+				<li>Theme : テーマ（スキン）</li>
+					<ul>
+						<li>elfinder<br> elfinder標準のテーマ（推奨）</li>
+						<li>windows-10<br>An elFinder theme that mimics Windows 10's user interface<br>
+							<a href="https://github.com/lokothodida/elfinder-theme-windows-10">lokothodida/elfinder-theme-windows-10</a></li>
+						<li>moono<br>A theme for elFinder that mimics the Moono CKEditor skin<br>
+							<a href="https://github.com/lokothodida/elfinder-theme-moono">lokothodida/elfinder-theme-moono</a></li>
+						<li>bootstrap<br> Bootstrap and LibreICONS theme<br>
+							<a href="https://github.com/StudioJunkyard/LibreICONS/tree/master/themes/elFinder">StudioJunkyard/elfinder-boostrap-theme</a></li>
+					</ul>
+				<li>ThumbnailSize : サムネイルサイズ (単位:px)。サムネイルは正方形です。CSSの修正等が必要となりますので特別な場合を除いて変更しないほうが安全です</li>
+			</ul>
+        </li>
+
+        <li>Plugin-AutoRotate<br>JPEG画像の自動回転。EXIF Orientationでアップロード時に処理します..
+			<ul>
+				<li>Enable : チェックして働きます</li>
+			</ul>
+        </li>
+        <li>Plugin-AutoResize<br>画像の自動サイズ。アップロード時に処理します.
+			<ul>
+				<li>Enable : チェックして働きます</li>
+				<li>MaxWidth : 最大幅 .このサイズ以上の幅は、このサイズに変更</li>
+				<li>MaxHeight : 最大高さ .このサイズ以上の高さは、このサイズに変更 </li>
+			</ul>
+        </li>
+        <li>Plugin-Watermark<br>画像にウォーターマーク（すかし）を入れる
+			<ul>
+				<li>Enable : チェックして働きます</li>
+				<li>Source : ウォーターマーク（すかし）の画像名(png).<br>設置場所 : elfinder_xh/images/
+					<br>例: logo.png ( elfinder_xh/images/logo.png が使用されます) </li>
+				<li>MarginRight : ウォーターマーク（すかし）の右の配置場所。Margin pixel.</li>
+				<li>MarginBottom : ウォーターマーク（すかし）の下からの配置場所.Margin pixel. </li>
+			</ul>
+        </li>
+        <li>Plugin-Normalizer<br>ファイル名やPath名等のUTF-8 Normalizer
+			 <br>* 動作させるには、 Class "Normalizer"(PHP 5 >= 5.3.0, PECL intl >= 1.0.0) または PEAR package "I18N_UnicodeNormalizer"が必須です
+			<ul>
+				<li>Enable : チェックして働きます</li>
+				<li>Nfc : 正規化形式C：文字は正準等価性によって分解され、再度合成。結果として文字の並びが変換前と変わることもありうる。</li>
+				<li>Nfkc : 正規化形式KC：文字は互換等価性によって分解され、正準等価性によって再度合成される。</li>
+			</ul>
+        </li>
+        <li>Plugin-Sanitizer:ファイル名やPath名等のサニタイズ。
+			 / ? " \< \> | を _ に自動変更します
+			<ul>
+				<li>Enable : チェックして働きます</li>
+			</ul>
+        </li>
+      </ol>
+      <div>
+        <div align="right"><a href="help.htm#">back to top</a></div>
+      </div>
+      <h2><a name="update">Update</a></h2>
+      <p>elFinderに大きな変更が無い限り、elFinder本体のバージョンアップは可能です。</p>
+      <ol>
+        <li>ダウンロード：>=2.1.11 <a href="https://github.com/Studio-42/elFinder/releases"  target="_blank">Releases · Studio-42/elFinder</a></li>
+        <li>Unzip the distribution on your computer.</li>
+        <li>Upload :elFinder-2.1.**/* -----> elfinder_xh/elfinder/* </li>
+      </ol>
+      <div>
+        <div align="right"><a href="help.htm#">back to top</a></div>
+      </div>
+      <h2><a name="limitations">Limitations</a></h2>
+      
+      <ul>
+        <li>CMSimple_XH Ver1.6.7</li>
+        <li>elFinder 2.1.11</li>
+        <li>CKEditor : <a href="http://cmsimple.holgerirmler.de/?Plugins:CKEditor" target="_blank">CKEditor for CMSimple_XH  Version: 2.1 - 2013-10-03</a> </li>
+        <li>TinyMCE4 : <a href="http://sourceforge.net/projects/tinymce4cmsimplexh/files/" target="_blank">tinyMCE4CMSimple_XH Version: 2.1 - 2013-10-03</a> ( <a href="http://www.cmsimpleforum.com/viewtopic.php?f=12&amp;t=7017" target="_blank">Forum</a> )</li>
+      </ul>
+      <div>
+        <div align="right"><a href="help.htm#">back to top</a></div>
+      </div>
+      <h2><a name="license">License</a></h2>
+      <ul>
+        <li></li>
+        <li>Software License terms<br>
+         <a href="http://www.gnu.org/licenses/gpl.html" target="_blank">GPLv2</a>.</li>
+        <li>elFinder is issued under a 3-clauses BSD license.</li>
+      </ul>
+      <p>© 2015 T. Uchiyama</p>
+      <div>
+        <div align="right"><a href="help.htm#">back to top</a></div>
+      </div>
+
+      <h2><a name="auther">作者</a></h2>
+      <p>
+        <ul>
+		<li>David Stutz : First release.Thanks! <a href="https://github.com/davidstutz/cmsimple-elfinder" target="_blank">davidstutz/cmsimple-elfinder</a></li>
+		<li>Takashi Uchiyama：Improvement <a href="https://github.com/bbfriend/elfinder_xh" target="_blank">bbfriend/elfinder_xh</a></li>
+		<li>elFinder
+			<ul>
+			<li>Chief developer: Dmitry "dio" Levashov <a href="mailto:dio@std42.ru">dio@std42.ru</a></li>
+			<li>Maintainer: Troex Nevelin <a href="mailto:troex@fury.scancode.ru">troex@fury.scancode.ru</a></li>
+			<li>Developers: Alexey Sukhotin <a href="mailto:strogg@yandex.ru">strogg@yandex.ru</a>, Naoki Sawada <a href="mailto:hypweb@gmail.com">hypweb@gmail.com</a></li>
+			<li>Icons: <a href="http://pixelmixer.ru">PixelMixer</a>, <a href="http://p.yusukekamiyamane.com">Yusuke Kamiyamane</a></li>
+			</ul>
+		</li>
+		<li>elFinder 3rd party Themes
+			<ul>
+			<li><a href="https://github.com/lokothodida/elfinder-theme-moono">lokothodida/elfinder-theme-moono</a></li>
+			<li><a href="https://github.com/lokothodida/elfinder-theme-windows-10">lokothodida/elfinder-theme-windows-10</a></li>
+			<li><a href="https://github.com/StudioJunkyard/LibreICONS/tree/master/themes/elFinder">StudioJunkyard/elfinder-boostrap-theme</a></li>
+			</ul>
+		</li>
+		<li>カスタム・スタイル</li>
+       </ul>
+      </p>
+      <div>
+        <div align="right"><a href="help.htm#">back to top</a></div>
+      </div>
+
+    </div>
+    <h1><a id="include_list"></a>同封リスト</h1>
+    <p>How to use. It is equivalent to the function of wordpress. <br>The stinking looking it with a <b>wp_ </b>.<br> For example, please look for it enqueue_script ==><a href="https://developer.wordpress.org/reference/functions/wp_enqueue_script/wp_enqueue_script"  target="_blank">wp_enqueue_script</a> <hr>
+    <p class="filelist">
+/** enqueue_xh/functions.enqueue_scripts.php **/<br>
+<pre>
+global $xh_scripts;
+
+ print_scripts( $handles = false )
+ register_script( $handle, $src, $deps = array(), $ver = false, $in_footer = false ) 
+ localize_script( $handle, $object_name, $l10n )
+ deregister_script( $handle )
+ enqueue_script( $handle, $src = false, $deps = array(), $ver = false, $in_footer = false ) 
+ dequeue_script( $handle )
+ script_is( $handle, $list = 'enqueued' )
+ script_add_data( $handle, $key, $value ){
+ print_head_scripts()
+ print_footer_scripts
+</pre>
+/** enqueue_xh/functions.enqueue_styles.php **/<br>
+<pre>
+global $xh_styles;
+
+ print_styles( $handles = false )
+ add_inline_style( $handle, $data )
+ add_inline_style( $handle, $data )
+ deregister_style( $handle )
+ enqueue_style( $handle, $src = false, $deps = array(), $ver = false, $media = 'all' )
+ dequeue_style( $handle )
+ style_is( $handle, $list = 'enqueued' )
+ style_add_data( $handle, $key, $value )
+</pre>
+<br>
+    </p>
+    <p>&nbsp;</p>
+    <!-- end .content --></div>
+  <div class="footer">
+    <p align="center"><a href="http://cmsimple-jp.org" target="_blank">CMSimple-jp.org</a></p>
+    <!-- end .footer --></div>
+  <!-- end .container --></div>
+</body>
+</html>
