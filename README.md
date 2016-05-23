@@ -1,6 +1,6 @@
 # elFinder_xh
 
-Using [elFinder](https://github.com/Studio-42/elFinder) as filebrowser for CMSimple_XH.
+Using [elFinder](https://github.com/Studio-42/elFinder) as filebrowser for [CMSimple_XH](http://www.cmsimple-xh.org/).
 
 **Should be used together with the [CMSimple elRTE plugin](https://github.com/davidstutz/cmsimple-elrte) and the jQuqery plugin (included in CMSimple XH)!**
 
