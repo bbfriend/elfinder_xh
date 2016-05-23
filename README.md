@@ -1,4 +1,4 @@
-# CMSimple elFinder
+# elFinder_xh
 
 Using [elFinder](https://github.com/Studio-42/elFinder) as filebrowser for CMSimple.
 
