@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Enqueue_Xh Help </title>
+<title>elFinder_XH Help </title>
 <link href="stylesheet.css" rel="stylesheet" type="text/css"><!--[if lte IE 7]>
 <style>
 .content { margin-right: -1px; } 
@@ -14,7 +14,7 @@ ul.nav a { zoom: 1; }
 <body>
 
 <div class="container">
-  <div class="header"><a href="#"><img src="images/Elfinder_xh.png" width="140" height="140"></a> 
+  <div class="header"><a href="#"><img src="images/elFinder_xh.png" width="140" height="140"></a> 
     <!-- end .header --></div>
   <div class="title">
     elFinder_XH filebrowser Plugin for CMSimple
@@ -32,9 +32,9 @@ ul.nav a { zoom: 1; }
         <li><a href="help.htm#installation">設置＆テスト</a></li>
         <li><a href="help.htm#settings">Settings</a></li>
         <li><a href="help.htm#update">Update</a></li>
-        <li><a href="help.htm#limitations">Limitations</a></li>
+        <li><a href="help.htm#confirmed ">動作確認済み</a></li>
         <li><a href="help.htm#license">License</a></li>
-        <li><a href="help.htm#filelist">Function List</a></li></ul>
+        <li><a href="help.htm#filelist"> List</a></li></ul>
   <!-- end .sidebar1 --></div>
   <div class="content">
     <div id="body">
@@ -172,7 +172,7 @@ ul.nav a { zoom: 1; }
       <div>
         <div align="right"><a href="help.htm#">back to top</a></div>
       </div>
-      <h2><a name="limitations">Limitations</a></h2>
+      <h2><a name="confirmed">動作確認済み</a></h2>
       
       <ul>
         <li>CMSimple_XH Ver1.6.7</li>
@@ -190,7 +190,6 @@ ul.nav a { zoom: 1; }
          <a href="http://www.gnu.org/licenses/gpl.html" target="_blank">GPLv2</a>.</li>
         <li>elFinder is issued under a 3-clauses BSD license.</li>
       </ul>
-      <p>© 2015 T. Uchiyama</p>
       <div>
         <div align="right"><a href="help.htm#">back to top</a></div>
       </div>
@@ -215,7 +214,6 @@ ul.nav a { zoom: 1; }
 			<li><a href="https://github.com/StudioJunkyard/LibreICONS/tree/master/themes/elFinder">StudioJunkyard/elfinder-boostrap-theme</a></li>
 			</ul>
 		</li>
-		<li>カスタム・スタイル</li>
        </ul>
       </p>
       <div>
@@ -224,42 +222,316 @@ ul.nav a { zoom: 1; }
 
     </div>
     <h1><a id="include_list"></a>同封リスト</h1>
-    <p>How to use. It is equivalent to the function of wordpress. <br>The stinking looking it with a <b>wp_ </b>.<br> For example, please look for it enqueue_script ==><a href="https://developer.wordpress.org/reference/functions/wp_enqueue_script/wp_enqueue_script"  target="_blank">wp_enqueue_script</a> <hr>
-    <p class="filelist">
-/** enqueue_xh/functions.enqueue_scripts.php **/<br>
-<pre>
-global $xh_scripts;
-
- print_scripts( $handles = false )
- register_script( $handle, $src, $deps = array(), $ver = false, $in_footer = false ) 
- localize_script( $handle, $object_name, $l10n )
- deregister_script( $handle )
- enqueue_script( $handle, $src = false, $deps = array(), $ver = false, $in_footer = false ) 
- dequeue_script( $handle )
- script_is( $handle, $list = 'enqueued' )
- script_add_data( $handle, $key, $value ){
- print_head_scripts()
- print_footer_scripts
+    <p><hr>
+<pre class="filelist">
+elfinder_xh Ver 1.01_bild 2.1.11
+------------------------------------------------------------------------------
+elfinder_xh
+|- config
+|  |- .htaccess
+|  |- config.php
+|  +- metaconfig.php
+|- connectors
+|  |- ckeditor
+|  |  |- ckeditor.php
+|  |  +- filebrowser.js
+|  |- tinymce
+|  |  |- filebrowser.js
+|  |  +- tinymce.php
+|  |- tinymce4
+|  |  |- filebrowser.js
+|  |  +- tinymce4.php
+|  |- connector.minimal_xh.php
+|  |- for_ckeditor_elfinder_html.php
+|  |- for_tinymce3_elfinder_html.php
+|  +- for_tinymce4_elfinder_html.php
+|- css
+|  |- images
+|  |  +- example_bg.png
+|  +- stylesheet.css
+|- elfinder
+|  |- css
+|  |  |- elfinder.full.css
+|  |  |- elfinder.min.css
+|  |  +- theme.css
+|  |- files
+|  |  |- .quarantine
+|  |  |- .tmb
+|  |  +- .gitkeep
+|  |- img
+|  |  |- arrows-active.png
+|  |  |- arrows-normal.png
+|  |  |- crop.gif
+|  |  |- dialogs.png
+|  |  |- icons-big.png
+|  |  |- icons-small.png
+|  |  |- logo.png
+|  |  |- progress.gif
+|  |  |- quicklook-bg.png
+|  |  |- quicklook-icons.png
+|  |  |- resize.png
+|  |  |- spinner-mini.gif
+|  |  |- toolbar.png
+|  |  |- volume_icon_dropbox.png
+|  |  |- volume_icon_ftp.png
+|  |  |- volume_icon_googledrive.png
+|  |  |- volume_icon_local.png
+|  |  +- volume_icon_sql.png
+|  |- js
+|  |  |- extras
+|  |  |  +- quicklook.googledocs.js
+|  |  |- i18n
+|  |  |  |- elfinder.ar.js
+|  |  |  |- elfinder.bg.js
+|  |  |  |- elfinder.ca.js
+|  |  |  |- elfinder.cs.js
+|  |  |  |- elfinder.da.js
+|  |  |  |- elfinder.de.js
+|  |  |  |- elfinder.el.js
+|  |  |  |- elfinder.es.js
+|  |  |  |- elfinder.fa.js
+|  |  |  |- elfinder.fo.js
+|  |  |  |- elfinder.fr.js
+|  |  |  |- elfinder.he.js
+|  |  |  |- elfinder.hu.js
+|  |  |  |- elfinder.id.js
+|  |  |  |- elfinder.it.js
+|  |  |  |- elfinder.jp.js
+|  |  |  |- elfinder.ko.js
+|  |  |  |- elfinder.LANG.js
+|  |  |  |- elfinder.nl.js
+|  |  |  |- elfinder.no.js
+|  |  |  |- elfinder.pl.js
+|  |  |  |- elfinder.pt_BR.js
+|  |  |  |- elfinder.ro.js
+|  |  |  |- elfinder.ru.js
+|  |  |  |- elfinder.sk.js
+|  |  |  |- elfinder.sl.js
+|  |  |  |- elfinder.sr.js
+|  |  |  |- elfinder.sv.js
+|  |  |  |- elfinder.tr.js
+|  |  |  |- elfinder.ug_CN.js
+|  |  |  |- elfinder.uk.js
+|  |  |  |- elfinder.vi.js
+|  |  |  |- elfinder.zh_CN.js
+|  |  |  +- elfinder.zh_TW.js
+|  |  |- proxy
+|  |  |  +- elFinderSupportVer1.js
+|  |  |- elfinder.full.js
+|  |  +- elfinder.min.js
+|  |- php
+|  |  |- libs
+|  |  |  +- GdBmp.php
+|  |  |- plugins
+|  |  |  |- AutoResize
+|  |  |  |  +- plugin.php
+|  |  |  |- AutoRotate
+|  |  |  |  +- plugin.php
+|  |  |  |- Normalizer
+|  |  |  |  +- plugin.php
+|  |  |  |- Sanitizer
+|  |  |  |  +- plugin.php
+|  |  |  +- Watermark
+|  |  |     |- logo.png
+|  |  |     +- plugin.php
+|  |  |- connector.minimal.php-dist
+|  |  |- connector.php-dist
+|  |  |- elFinder.class.php
+|  |  |- elFinderConnector.class.php
+|  |  |- elFinderFlysystemGoogleDriveNetmount.php
+|  |  |- elFinderSession.php
+|  |  |- elFinderSessionInterface.php
+|  |  |- elFinderVolumeDriver.class.php
+|  |  |- elFinderVolumeDropbox.class.php
+|  |  |- elFinderVolumeFTP.class.php
+|  |  |- elFinderVolumeFTPIIS.class.php
+|  |  |- elFinderVolumeLocalFileSystem.class.php
+|  |  |- elFinderVolumeMsSQL.class.php
+|  |  |- elFinderVolumeMySQL.class.php
+|  |  |- elFinderVolumeS3.class.php
+|  |  |- mime.types
+|  |  +- MySQLStorage.sql
+|  |- sounds
+|  |  +- rm.wav
+|  |- .gitignore
+|  |- bower.json
+|  |- Changelog
+|  |- composer.json
+|  |- elfinder.html_
+|  |- package.json
+|  +- README.md
+|- elfinder_theme
+|  |- bootstrap
+|  |  |- css
+|  |  |  |- theme.css
+|  |  |  +- theme-bootstrap-libreicons-svg.css
+|  |  |- img
+|  |  |  |- libre-archive.svg
+|  |  |  |- libre-arrow-left.svg
+|  |  |  |- libre-arrow-right.svg
+|  |  |  |- libre-caret-down.svg
+|  |  |  |- libre-chevron-left.svg
+|  |  |  |- libre-chevron-right.svg
+|  |  |  |- libre-close.svg
+|  |  |  |- libre-copy.svg
+|  |  |  |- libre-cut.svg
+|  |  |  |- libre-download.svg
+|  |  |  |- libre-edit.svg
+|  |  |  |- libre-exclamation-circle.svg
+|  |  |  |- libre-file.svg
+|  |  |  |- libre-file-archive.svg
+|  |  |  |- libre-file-audio.svg
+|  |  |  |- libre-file-code.svg
+|  |  |  |- libre-file-docs.svg
+|  |  |  |- libre-file-image.svg
+|  |  |  |- libre-file-pdf.svg
+|  |  |  |- libre-file-text.svg
+|  |  |  |- libre-file-video.svg
+|  |  |  |- libre-film.svg
+|  |  |  |- libre-folder.svg
+|  |  |  |- libre-folder-archive.svg
+|  |  |  |- libre-folder-attachments.svg
+|  |  |  |- libre-folder-backup.svg
+|  |  |  |- libre-folder-document.svg
+|  |  |  |- libre-folder-featured.svg
+|  |  |  |- libre-folder-open.svg
+|  |  |  |- libre-folder-orders.svg
+|  |  |  |- libre-folder-picture.svg
+|  |  |  |- libre-folder-users.svg
+|  |  |  |- libre-folder-video.svg
+|  |  |  |- libre-help.svg
+|  |  |  |- libre-home.svg
+|  |  |  |- libre-layout-blocks.svg
+|  |  |  |- libre-layout-list.svg
+|  |  |  |- libre-level-up.svg
+|  |  |  |- libre-paste.svg
+|  |  |  |- libre-question-circle.svg
+|  |  |  |- libre-refresh.svg
+|  |  |  |- libre-resize-full.svg
+|  |  |  |- libre-resize-small.svg
+|  |  |  |- libre-search.svg
+|  |  |  |- libre-server.svg
+|  |  |  |- libre-sort.svg
+|  |  |  |- libre-sort-asc.svg
+|  |  |  |- libre-sort-desc.svg
+|  |  |  |- libre-text-cursor.svg
+|  |  |  |- libre-trash.svg
+|  |  |  |- libre-upload.svg
+|  |  |  +- libre-view.svg
+|  |  |- elfinder-bootstrap-theme.png
+|  |  +- README.md
+|  |- elfinder
+|  |  +- css
+|  |     +- theme.css
+|  |- moono
+|  |  +- css
+|  |     |- contextmenu.less
+|  |     |- dialog.less
+|  |     |- file-icons.less
+|  |     |- mainui.less
+|  |     |- navbar.less
+|  |     |- navbar-icons.less
+|  |     |- navbar-restrict.less
+|  |     |- statusbar.less
+|  |     |- theme.css
+|  |     |- theme.less
+|  |     |- toolbar.less
+|  |     |- toolbar-icons.less
+|  |     |- view.less
+|  |     |- view-icons.less
+|  |     +- view-list.less
+|  +- windows-10
+|     |- css
+|     |  |- contextmenu.css
+|     |  |- dialog.css
+|     |  |- icons.css
+|     |  |- main.css
+|     |  |- navbar.css
+|     |  |- README.md
+|     |  |- reset.css
+|     |  |- statusbar.css
+|     |  |- theme.css
+|     |  |- toolbar.css
+|     |  |- view-list.css
+|     |  +- view-thumbnail.css
+|     |- images
+|     |  |- 16px
+|     |  |  |- archive.png
+|     |  |  |- back.png
+|     |  |  |- copy.png
+|     |  |  |- cut.png
+|     |  |  |- directory.png
+|     |  |  |- download.png
+|     |  |  |- duplicate.png
+|     |  |  |- edit.png
+|     |  |  |- extract.png
+|     |  |  |- file.png
+|     |  |  |- forward.png
+|     |  |  |- getfile.png
+|     |  |  |- help.png
+|     |  |  |- home.png
+|     |  |  |- info.png
+|     |  |  |- netmount.png
+|     |  |  |- open.png
+|     |  |  |- paste.png
+|     |  |  |- preview.png
+|     |  |  |- reload.png
+|     |  |  |- rename.png
+|     |  |  |- resize.png
+|     |  |  |- rm.png
+|     |  |  |- sort.png
+|     |  |  |- up.png
+|     |  |  |- upload.png
+|     |  |  |- view.png
+|     |  |  +- view-list.png
+|     |  |- 48px
+|     |  |  +- directory.png
+|     |  |- close.png
+|     |  |- close-hover.png
+|     |  +- README.md
+|     +- js
+|        +- README.md
+|- help
+|  |- images
+|  |  |- config.gif
+|  |  |- Elfinder_xh.png
+|  |  |- fail.png
+|  |  |- ok.png
+|  |  +- warn.png
+|  |- elfinder_xh_list.txt
+|  |- help.htm
+|  |- help_ja.htm
+|  +- stylesheet.css
+|- images
+|  |- help.png
+|  |- logo_sample.png
+|  +- testlogo.png
+|- jquery
+|  +- js
+|     |- jquery-1.12.2.js
+|     |- jquery-1.12.2.min.js
+|     |- jquery-ui-1.11.4.js
+|     +- jquery-ui-1.11.4.min.js
+|- languages
+|  |- default.php
+|  |- en.php
+|  +- ja.php
+|- admin.php
+|- elfinder.php
+|- init.js
+|- LICENSE.md
+|- README.md
++- version.nfo
+------------------------------------------------------------------------------
+Folder:47 / File 249 
 </pre>
-/** enqueue_xh/functions.enqueue_styles.php **/<br>
-<pre>
-global $xh_styles;
-
- print_styles( $handles = false )
- add_inline_style( $handle, $data )
- add_inline_style( $handle, $data )
- deregister_style( $handle )
- enqueue_style( $handle, $src = false, $deps = array(), $ver = false, $media = 'all' )
- dequeue_style( $handle )
- style_is( $handle, $list = 'enqueued' )
- style_add_data( $handle, $key, $value )
-</pre>
-<br>
-    </p>
     <p>&nbsp;</p>
+	<div>
+	<div align="right"><a href="help.htm#">back to top</a></div>
+	</div>
     <!-- end .content --></div>
   <div class="footer">
-    <p align="center"><a href="http://cmsimple-jp.org" target="_blank">CMSimple-jp.org</a></p>
+    <p align="center"><a href="http://cmsimple-jp.org" target="_blank">CMSimple-jp.org</a> © 2016 T. Uchiyama</p>
     <!-- end .footer --></div>
   <!-- end .container --></div>
 </body>

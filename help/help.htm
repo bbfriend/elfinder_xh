@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Enqueue_Xh Help </title>
+<title>elFinder_XH Help </title>
 <link href="stylesheet.css" rel="stylesheet" type="text/css"><!--[if lte IE 7]>
 <style>
 .content { margin-right: -1px; } 
@@ -14,38 +14,65 @@ ul.nav a { zoom: 1; }
 <body>
 
 <div class="container">
-  <div class="header"><a href="#"><img src="images/Elfinder_xh.png" width="140" height="140"></a> 
+  <div class="header"><a href="#"><img src="images/elFinder_xh.png" width="140" height="140"></a> 
     <!-- end .header --></div>
   <div class="title">
-    Elfinder filebrowser Plugin for CMSimple
+    elFinder_XH filebrowser Plugin for CMSimple
   </div>
   <div class="desc">
-    <p>The elFinder_XH prevents script and style conflicts.<br>To CMSimple_XH provide <a href="https://www.google.co.jp/search?q=Enqueue+wordpress"  target="_blank">WordPress Enqueue system</a> and equivalent function<br>
+    <p>elFinder_XH is something that is Web-based file manager elFinder to plug-ins for CMSimple_XH.<br>
+elFinder operation and details of itself Please check with <a href="http://studio-42.github.io/elFinder/"  target="_blank">http://studio-42.github.io/elFinder/</a>
     <span lang="en"></span></p>
   </div>
   <div class="clearfloat"></div>
   <div class="sidebar1">
     <ul class="nav">
-      <li><a href="help.htm#notice">Important Notice</a></li>
+        <li><a href="help.htm#feature">Feature</a></li>
+        <li><a href="help.htm#notice">Notice</a></li>
         <li><a href="help.htm#requirements">Requirements</a></li>
-        <li><a href="help.htm#installation">Installation</a></li>
+        <li><a href="help.htm#installation">Installation&Test</a></li>
         <li><a href="help.htm#settings">Settings</a></li>
-        <li><a href="help.htm#usage">Usage</a></li>
-        <li><a href="help.htm#limitations">Limitations</a></li>
+        <li><a href="help.htm#update">Update</a></li>
+        <li><a href="help.htm#confirmed">Confirmed</a></li>
         <li><a href="help.htm#license">License</a></li>
         <li><a href="help.htm#filelist">Function List</a></li></ul>
   <!-- end .sidebar1 --></div>
   <div class="content">
     <div id="body">
       <p><strong>Please do read this documentation, <em>before</em> you encounter any problems!</strong></p>
+
+      <h2><a name="feature">Feature</a></h2>
+      <p>
+        <ul>
+		<li>elFinder 2.1.x  *<a href="http://studio-42.github.io/elFinder/" target="_blank">see demo</a></li>
+		<li>integrated editors:TinyMCE3/TinyMCE4/CKEditor </li>
+		<li>Include elFinder Plugin :AutoRotate/AutoResize/Watermark/Normalizer/Sanitizer</li>
+		<li>Include elFinder Theme：windows-10/moono/bootstrap</li>
+		<li>Custom style OK!</li>
+       </ul>
+      </p>
+      <div>
+        <div align="right"><a href="help.htm#">back to top</a></div>
+      </div>
+
       <h2><a name="notice">Important Notice</a></h2>
       <p><strong>The current version is merely a draft. Everything might change, and  there may be severe bugs and limitations as it is barely tested. It is a so  called alpha version. Use with utmost caution!</strong></p>
       <div>
         <div align="right"><a href="help.htm#">back to top</a></div>
       </div>
+
       <h2><a name="requirements">Requirements</a></h2>
-      <p>Enqueue_Xh is a plugin for CMSimple_XH.  <br>
-        * Eecommend a combination of plugin Hook_XH
+      <p>elFinder 2.1.x <br>
+        <ul>
+		<li>jQuery / jQuery UI<br>
+		jQuery 1.8.0+  jQuery UI 1.9.0+  However, we recommend newest version.</li>
+		<li>Client <br>
+		Modern browser. elFinder was tested in Firefox 12, Internet Explorer 8+, Safari 6, Opera 12 and Chrome 19</li>
+		<li>Server <br>
+		PHP 5.2+ (Recommend PHP 5.4 or higher) And for thumbnails - GD / Imagick module / convert(imagemagick) require</li>
+		<li>For Plugin <br>
+		Plugin:Normalizer PHP >= 5.3.0、<a href="https://pecl.php.net/package/intl" target="_blank"> PECL intl</a> >= 1.0.0 or <a href="https://pear.php.net/package/I18N_UnicodeNormalizer" target="_blank">Pear I18N_UnicodeNormalizer</a> </li>
+		</ul>
       </p>
 
       <p>&nbsp;</p>
@@ -59,153 +86,454 @@ ul.nav a { zoom: 1; }
         <li>Unzip the distribution on your computer.</li>
         <li>Upload the whole directory to your server into the CMSimple_XH directory.
         <br>
-        <ul>
-          <li>plugins/enqueue_xh/* ----&gt; plugins/enqueue_xh/*.</li>
-          <li>cmsimple/add_to_userfuncs.php ---&gt; cmsimple/userfuncs.php<br>
-          * if you have already have a userfuncs.php, please copy the source code. Very simple code.</li>
-        </ul>
+			<ul>
+			  <li>plugins/elfinder_xh/* ----&gt; plugins/elfinder_xh/*.</li>
+			</ul>
         </li>
-        <li>EDIT cmsimple/tplfuncs.php <br>
-<pre>function head()
-{
-    global $title, $cf, $pth, $tx, $hjs;
-
-    $t = XH_title($cf['site']['title'], $title);
-    $t = '<title>' . strip_tags($t) . '</title>' . "\n";
-    foreach (array_merge($cf['meta'], $tx['meta']) as $i => $k) {
-        $t .= meta($i);
-    }
-    $t = tag('meta http-equiv="content-type" content="text/html;charset=UTF-8"')
-        . "\n" . $t;
-    $plugins = implode(', ', XH_plugins());
-
- /** Add Enqueue_xh St.******/
-//	This is Use Hook_XH .
-//	do_action( 'enqueue_scripts' );
-
-	ob_start();
-		print_styles();
-		$print_styles = ob_get_contents();
-	  ob_clean();
-		print_head_scripts();
-		$print_head_scripts = ob_get_contents();
-	ob_end_clean();
- /** Add Enqueue_xh END.******/
-
-    return $t
-        . tag(
-            'meta name="generator" content="' . CMSIMPLE_XH_VERSION . ' '
-            . CMSIMPLE_XH_BUILD . ' - www.cmsimple-xh.org"'
-        ) . "\n"
-        . '<!-- plugins: ' . $plugins . ' -->' . "\n"
-        . XH_renderPrevLink() . XH_renderNextLink()
-        . tag(
-            'link rel="stylesheet" href="' . $pth['file']['corestyle']
-            . '" type="text/css"'
-        ) . "\n"
-        . tag(
-            'link rel="stylesheet" href="' . $pth['file']['stylesheet']
-            . '" type="text/css"'
-        ) . "\n"
-        . $print_styles . $print_head_scripts . $hjs ; // <--- Add Enqueue_xh
-}
-</pre>
+        <li>Test as a Default elFinder <a href="https://github.com/Studio-42/elFinder#installation" target="_blank">reference</a><br>
+			<ol>
+			  <li> Change plugins/elfinder_xh/elfinder/php/connector.minimal.php<span style="color: #ff0000;font-weight: bold">-dist</span><br> to<br> plugins/elfinder_xh/elfinder/php/connector.minimal.php </li>
+			  <li> Change plugins/elfinder_xh/elfinder/elfinder.<span style="color: #ff0000;font-weight: bold">html_</span><br> to<br> plugins/elfinder_xh/elfinder/elfinder.html</li>
+			  <li> Check Your browser URL: http://your site･･･/plugins/elfinder_xh/elfinder/elfinder.html </li>
+			</ol>
         </li>
+        <li>After completion of the test<br>
+		Delete(Or, change is not presumed name)<br>
+		plugins/elfinder_xh/elfinder/php/connector.minimal.php <br>
+		plugins/elfinder_xh/elfinder/elfinder.html 
+
       </ol>
-      <h4>&nbsp;</h4>
-      <h4>Sample: Test enqueue_xh</h4>
-      <ol>
-        <li>Upload
-        <ul>
-          <li>Sample/plugins/dynamic_to_top_xh/* ---&gt; plugins/dynamic_to_top_xh/* <br>
-             * dynamic_to_top  is a simple plugins that were transplanted function only of the <a href="https://wordpress.org/plugins/dynamic-to-top/" target="_blank">Dynamic "To Top" Plugin </a>.Without admin setting.<br>
-             *If you improve the function, please contact the <a href="http://cmsimpleforum.com/" target="_blank">CMSiple_XH forum's.
-</li>
-        </ul>
-        </li>
-      </ol>
-      
-      <div>
-        <div align="right"><a href="help.htm#">back to top</a></div>
-      </div>
       <h2><a name="settings">Settings</a></h2>
-      <p>Select &quot;Enqueue_xh&quot; from &quot;Plugins&quot;.</p>
+      <p>In Admin palnel &quot;Plugins&quot;Menu -->  &quot;Elfinder_xh&quot;.</p>
+       <img src="images/config.gif">
       <ol>
-      </ol>
-      <ol>
-        <li>"config" select ,set <span id="result_box" lang="en">true / false</span>.
+        <li>Interface
+			<ul>
+				<li>Width : The width of the elFinder main interface(in pixels or auto)</li>
+				<li>Height : The height of the elFinder main interface (in pixels).</li>
+				<li>Theme : theme(skin)
+					<ul>
+						<li>elfinder<br>Dafult( recommend)</li>
+						<li>windows-10<br>An elFinder theme that mimics Windows 10's user interface<br>
+							<a href="https://github.com/lokothodida/elfinder-theme-windows-10">lokothodida/elfinder-theme-windows-10</a></li>
+						<li>moono<br>A theme for elFinder that mimics the Moono CKEditor skin<br>
+							<a href="https://github.com/lokothodida/elfinder-theme-moono">lokothodida/elfinder-theme-moono</a></li>
+						<li>bootstrap<br> Bootstrap and LibreICONS theme<br>
+							<a href="https://github.com/StudioJunkyard/LibreICONS/tree/master/themes/elFinder">StudioJunkyard/elfinder-boostrap-theme</a></li>
+					</ul>
+				<li>ThumbnailSize : Thumbnails size (in pixels). Thumbnails are square.
+It becomes necessary CSS and etc. fixes. because it is safer not to change with the exception of the special cases</li>
+			</ul>
+        </li>
+
+        <li>Plugin-AutoRotate<br>Auto rotation on file upload of JPEG file by EXIF Orientation..
+			<ul>
+				<li>Enable : Check to work</li>
+			</ul>
+        </li>
+        <li>Plugin-AutoResize<br>Auto resize on image file upload.
+			<ul>
+				<li>Enable : Check to work</li>
+				<li>MaxWidth : MaxWidth .To resize . Greater than or equal to this size</li>
+				<li>MaxHeight : MaxHeight .To resize Greater than or equal to this size  </li>
+			</ul>
+        </li>
+        <li>Plugin-Watermark<br>Print watermark on image file upload.
+			<ul>
+				<li>Enable : Check to work</li>
+				<li>Source : Watermark PNG file name.<br>Installation location : elfinder_xh/images/
+					<br>Ex: logo.png ( elfinder_xh/images/logo.png is used) </li>
+				<li>MarginRight : Watermark's Right position. Margin pixel. </li>
+				<li>MarginBottom : Watermark's Bottom position.Margin pixel.</li>
+			</ul>
+        </li>
+        <li>Plugin-Normalizer<br>UTF-8 Normalizer of file-name and file-path etc.<a href="http://unicode.org/reports/tr15/" target="_blank">What?</a>
+			<br>* This plugin require Class "Normalizer"(PHP 5 >= 5.3.0, PECL intl >= 1.0.0) or PEAR package "I18N_UnicodeNormalizer"
+			<ul>
+				<li>Enable : Check to work</li>
+				<li>Nfc : Normalization Form C：Canonical Decomposition followed by Canonical Composition</li>
+				<li>Nfkc : Normalization Form KC: Compatibility Decomposition followed by Canonical</li>
+			</ul>
+        </li>
+        <li>Plugin-Sanitizer:Sanitizer of file-name and file-path etc.<br>
+			\ / ? " \< \> | change to _
+			<ul>
+				<li>Enable : Check to work</li>
+			</ul>
         </li>
       </ol>
       <div>
         <div align="right"><a href="help.htm#">back to top</a></div>
       </div>
-      <h2><a name="usage">Usage</a></h2>
-      <p>See </p>
-      <ul>
-        <li><a href="https://www.google.co.jp/search?q=Enqueue+wordpress"  target="_blank">WordPress Enqueue system</a></li>
-        <li><a href="https://wordpress.org/search/Enqueue+?forums=1"  target="_blank">WordPress Enqueue</a></li>
-        <li></li>
-      </ul>
+      <h2><a name="update">Update</a></h2>
+      <p>As long as there are no major changes to the elFinder2.1.* , elFinder version-up of the body is possible. maybe..</p>
+      <ol>
+        <li>Download：>=2.1.11 <a href="https://github.com/Studio-42/elFinder/releases"  target="_blank">Releases · Studio-42/elFinder</a></li>
+        <li>Unzip the distribution on your computer.</li>
+        <li>Upload :elFinder-2.1.**/* -----> elfinder_xh/elfinder/* </li>
+      </ol>
       <div>
         <div align="right"><a href="help.htm#">back to top</a></div>
       </div>
-      <h2><a name="limitations">Limitations</a></h2>
-      <blockquote>
-  <p>.</p>
-</blockquote>
+      <h2><a name="confirmed">Confirmed operation</a></h2>
+      
+      <ul>
+        <li>CMSimple_XH Ver1.6.7</li>
+        <li>elFinder 2.1.11</li>
+        <li>CKEditor : <a href="http://cmsimple.holgerirmler.de/?Plugins:CKEditor" target="_blank">CKEditor for CMSimple_XH  Version: 2.1 - 2013-10-03</a> </li>
+        <li>TinyMCE4 : <a href="http://sourceforge.net/projects/tinymce4cmsimplexh/files/" target="_blank">tinyMCE4CMSimple_XH Version: 2.1 - 2013-10-03</a> ( <a href="http://www.cmsimpleforum.com/viewtopic.php?f=12&amp;t=7017" target="_blank">Forum</a> )</li>
+      </ul>
       <div>
         <div align="right"><a href="help.htm#">back to top</a></div>
       </div>
       <h2><a name="license">License</a></h2>
       <ul>
         <li></li>
-        <li>Software License terms<br>
-         <a href="http://www.gnu.org/licenses/gpl.html" target="_blank">GPLv2</a>.</li>
+        <li>Software License terms <a href="http://www.gnu.org/licenses/gpl.html" target="_blank">GPLv2</a>.</li>
+        <li>elFinder is issued under a 3-clauses BSD license.</li>
       </ul>
-      <p>© 2015 T. Uchiyama</p>
       <div>
         <div align="right"><a href="help.htm#">back to top</a></div>
       </div>
-      <h2>&nbsp;</h2>
-      <div></div>
+
+      <h2><a name="auther">Auther</a></h2>
+      <p>
+        <ul>
+		<li>David Stutz : First release.Thanks! <a href="https://github.com/davidstutz/cmsimple-elfinder" target="_blank">davidstutz/cmsimple-elfinder</a></li>
+		<li>Takashi Uchiyama：Improvement <a href="https://github.com/bbfriend/elfinder_xh" target="_blank">bbfriend/elfinder_xh</a></li>
+		<li>elFinder
+			<ul>
+			<li>Chief developer: Dmitry "dio" Levashov <a href="mailto:dio@std42.ru">dio@std42.ru</a></li>
+			<li>Maintainer: Troex Nevelin <a href="mailto:troex@fury.scancode.ru">troex@fury.scancode.ru</a></li>
+			<li>Developers: Alexey Sukhotin <a href="mailto:strogg@yandex.ru">strogg@yandex.ru</a>, Naoki Sawada <a href="mailto:hypweb@gmail.com">hypweb@gmail.com</a></li>
+			<li>Icons: <a href="http://pixelmixer.ru">PixelMixer</a>, <a href="http://p.yusukekamiyamane.com">Yusuke Kamiyamane</a></li>
+			</ul>
+		</li>
+		<li>elFinder 3rd party Themes
+			<ul>
+			<li><a href="https://github.com/lokothodida/elfinder-theme-moono">lokothodida/elfinder-theme-moono</a></li>
+			<li><a href="https://github.com/lokothodida/elfinder-theme-windows-10">lokothodida/elfinder-theme-windows-10</a></li>
+			<li><a href="https://github.com/StudioJunkyard/LibreICONS/tree/master/themes/elFinder">StudioJunkyard/elfinder-boostrap-theme</a></li>
+			</ul>
+		</li>
+       </ul>
+      </p>
+      <div>
+        <div align="right"><a href="help.htm#">back to top</a></div>
+      </div>
+
     </div>
-    <h1><a id="filelist"></a> Function List</h1>
-    <p>How to use. It is equivalent to the function of wordpress. <br>The stinking looking it with a <b>wp_ </b>.<br> For example, please look for it enqueue_script ==><a href="https://developer.wordpress.org/reference/functions/wp_enqueue_script/wp_enqueue_script"  target="_blank">wp_enqueue_script</a> <hr>
-    <p class="filelist">
-/** enqueue_xh/functions.enqueue_scripts.php **/<br>
-<pre>
-global $xh_scripts;
-
- print_scripts( $handles = false )
- register_script( $handle, $src, $deps = array(), $ver = false, $in_footer = false ) 
- localize_script( $handle, $object_name, $l10n )
- deregister_script( $handle )
- enqueue_script( $handle, $src = false, $deps = array(), $ver = false, $in_footer = false ) 
- dequeue_script( $handle )
- script_is( $handle, $list = 'enqueued' )
- script_add_data( $handle, $key, $value ){
- print_head_scripts()
- print_footer_scripts
+    <h1><a id="include_list"></a>Include_list</h1>
+    <p><hr>
+<pre class="filelist">
+elfinder_xh Ver 1.01_bild 2.1.11
+------------------------------------------------------------------------------
+elfinder_xh
+|- config
+|  |- .htaccess
+|  |- config.php
+|  +- metaconfig.php
+|- connectors
+|  |- ckeditor
+|  |  |- ckeditor.php
+|  |  +- filebrowser.js
+|  |- tinymce
+|  |  |- filebrowser.js
+|  |  +- tinymce.php
+|  |- tinymce4
+|  |  |- filebrowser.js
+|  |  +- tinymce4.php
+|  |- connector.minimal_xh.php
+|  |- for_ckeditor_elfinder_html.php
+|  |- for_tinymce3_elfinder_html.php
+|  +- for_tinymce4_elfinder_html.php
+|- css
+|  |- images
+|  |  +- example_bg.png
+|  +- stylesheet.css
+|- elfinder
+|  |- css
+|  |  |- elfinder.full.css
+|  |  |- elfinder.min.css
+|  |  +- theme.css
+|  |- files
+|  |  |- .quarantine
+|  |  |- .tmb
+|  |  +- .gitkeep
+|  |- img
+|  |  |- arrows-active.png
+|  |  |- arrows-normal.png
+|  |  |- crop.gif
+|  |  |- dialogs.png
+|  |  |- icons-big.png
+|  |  |- icons-small.png
+|  |  |- logo.png
+|  |  |- progress.gif
+|  |  |- quicklook-bg.png
+|  |  |- quicklook-icons.png
+|  |  |- resize.png
+|  |  |- spinner-mini.gif
+|  |  |- toolbar.png
+|  |  |- volume_icon_dropbox.png
+|  |  |- volume_icon_ftp.png
+|  |  |- volume_icon_googledrive.png
+|  |  |- volume_icon_local.png
+|  |  +- volume_icon_sql.png
+|  |- js
+|  |  |- extras
+|  |  |  +- quicklook.googledocs.js
+|  |  |- i18n
+|  |  |  |- elfinder.ar.js
+|  |  |  |- elfinder.bg.js
+|  |  |  |- elfinder.ca.js
+|  |  |  |- elfinder.cs.js
+|  |  |  |- elfinder.da.js
+|  |  |  |- elfinder.de.js
+|  |  |  |- elfinder.el.js
+|  |  |  |- elfinder.es.js
+|  |  |  |- elfinder.fa.js
+|  |  |  |- elfinder.fo.js
+|  |  |  |- elfinder.fr.js
+|  |  |  |- elfinder.he.js
+|  |  |  |- elfinder.hu.js
+|  |  |  |- elfinder.id.js
+|  |  |  |- elfinder.it.js
+|  |  |  |- elfinder.jp.js
+|  |  |  |- elfinder.ko.js
+|  |  |  |- elfinder.LANG.js
+|  |  |  |- elfinder.nl.js
+|  |  |  |- elfinder.no.js
+|  |  |  |- elfinder.pl.js
+|  |  |  |- elfinder.pt_BR.js
+|  |  |  |- elfinder.ro.js
+|  |  |  |- elfinder.ru.js
+|  |  |  |- elfinder.sk.js
+|  |  |  |- elfinder.sl.js
+|  |  |  |- elfinder.sr.js
+|  |  |  |- elfinder.sv.js
+|  |  |  |- elfinder.tr.js
+|  |  |  |- elfinder.ug_CN.js
+|  |  |  |- elfinder.uk.js
+|  |  |  |- elfinder.vi.js
+|  |  |  |- elfinder.zh_CN.js
+|  |  |  +- elfinder.zh_TW.js
+|  |  |- proxy
+|  |  |  +- elFinderSupportVer1.js
+|  |  |- elfinder.full.js
+|  |  +- elfinder.min.js
+|  |- php
+|  |  |- libs
+|  |  |  +- GdBmp.php
+|  |  |- plugins
+|  |  |  |- AutoResize
+|  |  |  |  +- plugin.php
+|  |  |  |- AutoRotate
+|  |  |  |  +- plugin.php
+|  |  |  |- Normalizer
+|  |  |  |  +- plugin.php
+|  |  |  |- Sanitizer
+|  |  |  |  +- plugin.php
+|  |  |  +- Watermark
+|  |  |     |- logo.png
+|  |  |     +- plugin.php
+|  |  |- connector.minimal.php-dist
+|  |  |- connector.php-dist
+|  |  |- elFinder.class.php
+|  |  |- elFinderConnector.class.php
+|  |  |- elFinderFlysystemGoogleDriveNetmount.php
+|  |  |- elFinderSession.php
+|  |  |- elFinderSessionInterface.php
+|  |  |- elFinderVolumeDriver.class.php
+|  |  |- elFinderVolumeDropbox.class.php
+|  |  |- elFinderVolumeFTP.class.php
+|  |  |- elFinderVolumeFTPIIS.class.php
+|  |  |- elFinderVolumeLocalFileSystem.class.php
+|  |  |- elFinderVolumeMsSQL.class.php
+|  |  |- elFinderVolumeMySQL.class.php
+|  |  |- elFinderVolumeS3.class.php
+|  |  |- mime.types
+|  |  +- MySQLStorage.sql
+|  |- sounds
+|  |  +- rm.wav
+|  |- .gitignore
+|  |- bower.json
+|  |- Changelog
+|  |- composer.json
+|  |- elfinder.html_
+|  |- package.json
+|  +- README.md
+|- elfinder_theme
+|  |- bootstrap
+|  |  |- css
+|  |  |  |- theme.css
+|  |  |  +- theme-bootstrap-libreicons-svg.css
+|  |  |- img
+|  |  |  |- libre-archive.svg
+|  |  |  |- libre-arrow-left.svg
+|  |  |  |- libre-arrow-right.svg
+|  |  |  |- libre-caret-down.svg
+|  |  |  |- libre-chevron-left.svg
+|  |  |  |- libre-chevron-right.svg
+|  |  |  |- libre-close.svg
+|  |  |  |- libre-copy.svg
+|  |  |  |- libre-cut.svg
+|  |  |  |- libre-download.svg
+|  |  |  |- libre-edit.svg
+|  |  |  |- libre-exclamation-circle.svg
+|  |  |  |- libre-file.svg
+|  |  |  |- libre-file-archive.svg
+|  |  |  |- libre-file-audio.svg
+|  |  |  |- libre-file-code.svg
+|  |  |  |- libre-file-docs.svg
+|  |  |  |- libre-file-image.svg
+|  |  |  |- libre-file-pdf.svg
+|  |  |  |- libre-file-text.svg
+|  |  |  |- libre-file-video.svg
+|  |  |  |- libre-film.svg
+|  |  |  |- libre-folder.svg
+|  |  |  |- libre-folder-archive.svg
+|  |  |  |- libre-folder-attachments.svg
+|  |  |  |- libre-folder-backup.svg
+|  |  |  |- libre-folder-document.svg
+|  |  |  |- libre-folder-featured.svg
+|  |  |  |- libre-folder-open.svg
+|  |  |  |- libre-folder-orders.svg
+|  |  |  |- libre-folder-picture.svg
+|  |  |  |- libre-folder-users.svg
+|  |  |  |- libre-folder-video.svg
+|  |  |  |- libre-help.svg
+|  |  |  |- libre-home.svg
+|  |  |  |- libre-layout-blocks.svg
+|  |  |  |- libre-layout-list.svg
+|  |  |  |- libre-level-up.svg
+|  |  |  |- libre-paste.svg
+|  |  |  |- libre-question-circle.svg
+|  |  |  |- libre-refresh.svg
+|  |  |  |- libre-resize-full.svg
+|  |  |  |- libre-resize-small.svg
+|  |  |  |- libre-search.svg
+|  |  |  |- libre-server.svg
+|  |  |  |- libre-sort.svg
+|  |  |  |- libre-sort-asc.svg
+|  |  |  |- libre-sort-desc.svg
+|  |  |  |- libre-text-cursor.svg
+|  |  |  |- libre-trash.svg
+|  |  |  |- libre-upload.svg
+|  |  |  +- libre-view.svg
+|  |  |- elfinder-bootstrap-theme.png
+|  |  +- README.md
+|  |- elfinder
+|  |  +- css
+|  |     +- theme.css
+|  |- moono
+|  |  +- css
+|  |     |- contextmenu.less
+|  |     |- dialog.less
+|  |     |- file-icons.less
+|  |     |- mainui.less
+|  |     |- navbar.less
+|  |     |- navbar-icons.less
+|  |     |- navbar-restrict.less
+|  |     |- statusbar.less
+|  |     |- theme.css
+|  |     |- theme.less
+|  |     |- toolbar.less
+|  |     |- toolbar-icons.less
+|  |     |- view.less
+|  |     |- view-icons.less
+|  |     +- view-list.less
+|  +- windows-10
+|     |- css
+|     |  |- contextmenu.css
+|     |  |- dialog.css
+|     |  |- icons.css
+|     |  |- main.css
+|     |  |- navbar.css
+|     |  |- README.md
+|     |  |- reset.css
+|     |  |- statusbar.css
+|     |  |- theme.css
+|     |  |- toolbar.css
+|     |  |- view-list.css
+|     |  +- view-thumbnail.css
+|     |- images
+|     |  |- 16px
+|     |  |  |- archive.png
+|     |  |  |- back.png
+|     |  |  |- copy.png
+|     |  |  |- cut.png
+|     |  |  |- directory.png
+|     |  |  |- download.png
+|     |  |  |- duplicate.png
+|     |  |  |- edit.png
+|     |  |  |- extract.png
+|     |  |  |- file.png
+|     |  |  |- forward.png
+|     |  |  |- getfile.png
+|     |  |  |- help.png
+|     |  |  |- home.png
+|     |  |  |- info.png
+|     |  |  |- netmount.png
+|     |  |  |- open.png
+|     |  |  |- paste.png
+|     |  |  |- preview.png
+|     |  |  |- reload.png
+|     |  |  |- rename.png
+|     |  |  |- resize.png
+|     |  |  |- rm.png
+|     |  |  |- sort.png
+|     |  |  |- up.png
+|     |  |  |- upload.png
+|     |  |  |- view.png
+|     |  |  +- view-list.png
+|     |  |- 48px
+|     |  |  +- directory.png
+|     |  |- close.png
+|     |  |- close-hover.png
+|     |  +- README.md
+|     +- js
+|        +- README.md
+|- help
+|  |- images
+|  |  |- config.gif
+|  |  |- Elfinder_xh.png
+|  |  |- fail.png
+|  |  |- ok.png
+|  |  +- warn.png
+|  |- elfinder_xh_list.txt
+|  |- help.htm
+|  |- help_ja.htm
+|  +- stylesheet.css
+|- images
+|  |- help.png
+|  |- logo_sample.png
+|  +- testlogo.png
+|- jquery
+|  +- js
+|     |- jquery-1.12.2.js
+|     |- jquery-1.12.2.min.js
+|     |- jquery-ui-1.11.4.js
+|     +- jquery-ui-1.11.4.min.js
+|- languages
+|  |- default.php
+|  |- en.php
+|  +- ja.php
+|- admin.php
+|- elfinder.php
+|- init.js
+|- LICENSE.md
+|- README.md
++- version.nfo
+------------------------------------------------------------------------------
+Folder:47 / File 249 
 </pre>
-/** enqueue_xh/functions.enqueue_styles.php **/<br>
-<pre>
-global $xh_styles;
-
- print_styles( $handles = false )
- add_inline_style( $handle, $data )
- add_inline_style( $handle, $data )
- deregister_style( $handle )
- enqueue_style( $handle, $src = false, $deps = array(), $ver = false, $media = 'all' )
- dequeue_style( $handle )
- style_is( $handle, $list = 'enqueued' )
- style_add_data( $handle, $key, $value )
-</pre>
-<br>
-    </p>
     <p>&nbsp;</p>
+	<div>
+	<div align="right"><a href="help.htm#">back to top</a></div>
+	</div>
     <!-- end .content --></div>
   <div class="footer">
-    <p align="center"><a href="http://cmsimple-jp.org" target="_blank">CMSimple-jp.org</a></p>
+    <p align="center"><a href="http://cmsimple-jp.org" target="_blank">CMSimple-jp.org</a> ©2016 T. Uchiyama</p>
     <!-- end .footer --></div>
   <!-- end .container --></div>
 </body>

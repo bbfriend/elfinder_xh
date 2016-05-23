@@ -57,7 +57,7 @@ if(isset($elfinder_xh))
 
 		/* Plugin information. */
 		$o .= '<h1>' . Elfinder::name() . '</h1>'
-				. tag('img src="'.$pth['folder']['plugins']. $plugin .'/help/images/Elfinder_xh.png" style="float: left; margin: 0 20px 20px 0"') 
+				. tag('img src="'.$pth['folder']['plugins']. $plugin .'/help/images/elFinder_xh.png" style="float: left; margin: 0 20px 20px 0"') 
 				. Elfinder::description()
 
 				. '<p>'

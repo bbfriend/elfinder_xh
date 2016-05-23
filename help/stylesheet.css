@@ -98,8 +98,10 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus {
 	font-size: 36px;
 	
 }
-.filelist{
-	line-height: 20px;
+.filelist {
+    background: #fff none repeat scroll 0 0;
+    line-height: 16px;
+    padding: 20px;
 }
 .container .content #body ul li em {
 	font-size: small;
