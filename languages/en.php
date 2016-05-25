@@ -3,8 +3,12 @@
 $plugin_tx['elfinder_xh']['menu_main']="Informations";
 $plugin_tx['elfinder_xh']['cf_interface_width']="The width of the elFinder main interface(in pixels or auto)<br> Dafult:auto";
 $plugin_tx['elfinder_xh']['cf_interface_height']="The height of the elFinder main interface (in pixels).<br> Dafult:600";
-$plugin_tx['elfinder_xh']['cf_interface_thumbnailSize']="Thumbnails size (in pixels). Thumbnails are square.<br>It becomes necessary CSS and etc. fixes. because it is safer not to change with the exception of the special cases<br> Dafult:48";
 $plugin_tx['elfinder_xh']['cf_interface_theme']="theme(skin)<br> Dafult:elfinder( recommend)";
+$plugin_tx['elfinder_xh']['cf_interface_thumbnailSize']="Thumbnails size (in pixels). Thumbnails are square.<br>It becomes necessary CSS and etc. fixes. because it is safer not to change with the exception of the special cases<br> Dafult:48";
+$plugin_tx['elfinder_xh']['cf_interface_showDotFilesDirs']="Show Files and Directories that start with a dot (.) <br>it is safer not check with the exception of the special cases";
+$plugin_tx['elfinder_xh']['cf_trouble-Shoot_debugMode']="Start elFinder's Debug Mode ";
+$plugin_tx['elfinder_xh']['cf_trouble-Shoot_xh-TemplateIsBootstrap']="If you are using Bootstrap type of template, Try Check on.<br>Maybe ,Conflict between Bootstrap and jQuery UI .";
+$plugin_tx['elfinder_xh']['cf_trouble-Shoot_encoding']="This volume's local encoding. (server's file system encoding) It's necessary to be valid value to <b>iconv</b>.<br>ex1. ISO-8859-1 , ex2. CP932<br> Default empty(=UTF-8)";
 $plugin_tx['elfinder_xh']['cf_plugin-AutoRotate_enable']="Auto rotation on file upload of JPEG file by <b>EXIF Orientation</b>.";
 $plugin_tx['elfinder_xh']['cf_plugin-AutoResize_enable']="Auto resize on image file upload.";
 $plugin_tx['elfinder_xh']['cf_plugin-AutoResize_maxWidth']="MaxWidth .To resize . Greater than or equal to this size <br> Dafult:1200";

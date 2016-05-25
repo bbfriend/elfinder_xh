@@ -54,9 +54,8 @@ a:hover, a:active, a:focus {
 }
 
 .content ul, .content ol { 
-	padding: 0 15px 15px 40px; 
+	padding: 0 15px 15px 20px; 
 }
-
 ul.nav {
 	list-style: none; 
 	margin-bottom: 15px;
@@ -105,4 +104,10 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus {
 }
 .container .content #body ul li em {
 	font-size: small;
+}
+.interface {
+	padding-left: 20px;
+}
+ul.set-theme { 
+	padding: 0 15px 15px 320px; 
 }

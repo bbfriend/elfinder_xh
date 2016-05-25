@@ -4,7 +4,7 @@
  *
  * @author    BBFeiend 
  * @copyright 2016  <http://cmsimple-jp.org>
- * @Ver 
+ * @Ver 1.01
 */
 
 //error_reporting(0); // Set E_ALL for debuging
@@ -32,6 +32,10 @@ include_once dirname(__FILE__).DIRECTORY_SEPARATOR.'../elfinder/php/elFinderVolu
  * @return bool|null
  **/
 function access($attr, $path, $data, $volume) {
+	global $plugin_cf;
+	if($plugin_cf['elfinder_xh']['interface_showDotFilesDirs'] ){
+		return null;
+	}
 	return strpos(basename($path), '.') === 0       // if file/folder begins with '.' (dot)
 		? !($attr == 'read' || $attr == 'write')    // set read+write to false, other (locked+hidden) set to true
 		:  null;                                    // else elFinder decide it itself
@@ -68,8 +72,7 @@ $not_del_folder =	"/(".
 // https://github.com/Studio-42/elFinder/wiki/Connector-configuration-options
 // https://github.com/Studio-42/elFinder/wiki/Connector-configuration-options-2.1
 $opts = array(
-//	'debug' => true,
-	
+//	'debug' => true,	
 	'bind' =>
 
 		array(
@@ -170,7 +173,7 @@ $opts = array(
 			'uploadAllow'	=> $upload_allow,
 
 			'disabled' => array('zipdl'),//Disable folder download
-//			'encoding'    => 'CP932', //
+			'encoding'    => $plugin_cf['elfinder_xh']['trouble-Shoot_encoding'],
 			'locale'		=> $_SESSION['elfinder']['locale'],
 			'uploadOrder'	=> array('deny', 'allow'),
 			'accessControl'	=> 'access'                     // disable and hide dot starting files (OPTIONAL)

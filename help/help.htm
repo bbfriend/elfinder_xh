@@ -105,14 +105,17 @@ elFinder operation and details of itself Please check with <a href="http://studi
       </ol>
       <h2><a name="settings">Settings</a></h2>
       <p>In Admin palnel &quot;Plugins&quot;Menu -->  &quot;Elfinder_xh&quot;.</p>
-       <img src="images/config.gif">
+      <div>
+       <img style="float: left;margin-right: 30px" src="images/config.gif" width="300px">
+      </div>
+      <div class="interface">
       <ol>
-        <li>Interface
+        <li><h3>Interface</h3>
 			<ul>
 				<li>Width : The width of the elFinder main interface(in pixels or auto)</li>
 				<li>Height : The height of the elFinder main interface (in pixels).</li>
 				<li>Theme : theme(skin)
-					<ul>
+					<ul class="set-theme">
 						<li>elfinder<br>Dafult( recommend)</li>
 						<li>windows-10<br>An elFinder theme that mimics Windows 10's user interface<br>
 							<a href="https://github.com/lokothodida/elfinder-theme-windows-10">lokothodida/elfinder-theme-windows-10</a></li>
@@ -121,24 +124,32 @@ elFinder operation and details of itself Please check with <a href="http://studi
 						<li>bootstrap<br> Bootstrap and LibreICONS theme<br>
 							<a href="https://github.com/StudioJunkyard/LibreICONS/tree/master/themes/elFinder">StudioJunkyard/elfinder-boostrap-theme</a></li>
 					</ul>
-				<li>ThumbnailSize : Thumbnails size (in pixels). Thumbnails are square.
+				<li>ThumbnailSize<br>Thumbnails size (in pixels). Thumbnails are square.
 It becomes necessary CSS and etc. fixes. because it is safer not to change with the exception of the special cases</li>
+				<li>ShowDotFilesDirs<br>Show Files and Directories that start with a dot (.)
+it is safer not check with the exception of the special cases</li>
 			</ul>
         </li>
-
-        <li>Plugin-AutoRotate<br>Auto rotation on file upload of JPEG file by EXIF Orientation..
+        <li><h3>Trouble-Shoot</h3>
+			<ul>
+				<li>Xh-TemplateIsBootstrap<br>If you are using Bootstrap type of template, Try Check on.
+Maybe ,Conflict between Bootstrap and jQuery UI .<br><img src="images/tmp_boot.gif" width="600px"><br><img src="images/tmp_nonboot.gif" width="600px"></li>
+				<li>Encoding<br>This volume's local encoding. (server's file system encoding) It's necessary to be valid value to <b>iconv</b>.<br> ex1. ISO-8859-1 , ex2. CP932 . Default empty(=UTF-8)</li>
+			</ul>
+        </li>
+        <li><h3>Plugin-AutoRotate</h3>Auto rotation on file upload of JPEG file by EXIF Orientation..
 			<ul>
 				<li>Enable : Check to work</li>
 			</ul>
         </li>
-        <li>Plugin-AutoResize<br>Auto resize on image file upload.
+        <li><h3>Plugin-AutoResize</h3>Auto resize on image file upload.
 			<ul>
 				<li>Enable : Check to work</li>
 				<li>MaxWidth : MaxWidth .To resize . Greater than or equal to this size</li>
 				<li>MaxHeight : MaxHeight .To resize Greater than or equal to this size  </li>
 			</ul>
         </li>
-        <li>Plugin-Watermark<br>Print watermark on image file upload.
+        <li><h3>Plugin-Watermark</h3>Print watermark on image file upload.
 			<ul>
 				<li>Enable : Check to work</li>
 				<li>Source : Watermark PNG file name.<br>Installation location : elfinder_xh/images/
@@ -147,7 +158,7 @@ It becomes necessary CSS and etc. fixes. because it is safer not to change with 
 				<li>MarginBottom : Watermark's Bottom position.Margin pixel.</li>
 			</ul>
         </li>
-        <li>Plugin-Normalizer<br>UTF-8 Normalizer of file-name and file-path etc.<a href="http://unicode.org/reports/tr15/" target="_blank">What?</a>
+        <li><h3>Plugin-Normalizer</h3>UTF-8 Normalizer of file-name and file-path etc.<a href="http://unicode.org/reports/tr15/" target="_blank">What?</a>
 			<br>* This plugin require Class "Normalizer"(PHP 5 >= 5.3.0, PECL intl >= 1.0.0) or PEAR package "I18N_UnicodeNormalizer"
 			<ul>
 				<li>Enable : Check to work</li>
@@ -155,13 +166,15 @@ It becomes necessary CSS and etc. fixes. because it is safer not to change with 
 				<li>Nfkc : Normalization Form KC: Compatibility Decomposition followed by Canonical</li>
 			</ul>
         </li>
-        <li>Plugin-Sanitizer:Sanitizer of file-name and file-path etc.<br>
+        <li><h3>Plugin-Sanitizer</h3>Sanitizer of file-name and file-path etc.<br>
 			\ / ? " \< \> | change to _
 			<ul>
 				<li>Enable : Check to work</li>
 			</ul>
         </li>
       </ol>
+      </div>
+<div style="clear:left;"></div>
       <div>
         <div align="right"><a href="help.htm#">back to top</a></div>
       </div>

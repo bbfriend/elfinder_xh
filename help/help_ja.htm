@@ -103,14 +103,17 @@ ul.nav a { zoom: 1; }
       </ol>
       <h2><a name="settings">Settings</a></h2>
       <p>管理画面で　&quot;Plugins&quot;メニューより &quot;Elfinder_xh&quot;.</p>
-       <img src="images/config.gif">
+      <div>
+       <img style="float: left;margin-right: 30px" src="images/config.gif" width="300px">
+      </div>
+      <div class="interface">
       <ol>
-        <li>Interface
+        <li><h3>Interface</h3>
 			<ul>
 				<li>Width : 操作画面の 幅（単位:px または auto )</li>
 				<li>Height : 操作画面の 高さ (単位:px)</li>
 				<li>Theme : テーマ（スキン）</li>
-					<ul>
+					<ul class="set-theme">
 						<li>elfinder<br> elfinder標準のテーマ（推奨）</li>
 						<li>windows-10<br>An elFinder theme that mimics Windows 10's user interface<br>
 							<a href="https://github.com/lokothodida/elfinder-theme-windows-10">lokothodida/elfinder-theme-windows-10</a></li>
@@ -119,23 +122,30 @@ ul.nav a { zoom: 1; }
 						<li>bootstrap<br> Bootstrap and LibreICONS theme<br>
 							<a href="https://github.com/StudioJunkyard/LibreICONS/tree/master/themes/elFinder">StudioJunkyard/elfinder-boostrap-theme</a></li>
 					</ul>
-				<li>ThumbnailSize : サムネイルサイズ (単位:px)。サムネイルは正方形です。CSSの修正等が必要となりますので特別な場合を除いて変更しないほうが安全です</li>
+				<li>ThumbnailSize<br>サムネイルサイズ (単位:px)。サムネイルは正方形です。CSSの修正等が必要となりますので特別な場合を除いて変更しないほうが安全です</li>
+				<li>ShowDotFilesDirs<br>ドット(.)で始まるファイルやデイィレクトリを表示する。
+特別な場合を除いて、チェックしないほうが安全です</li>
 			</ul>
         </li>
-
-        <li>Plugin-AutoRotate<br>JPEG画像の自動回転。EXIF Orientationでアップロード時に処理します..
+        <li><h3>Trouble-Shoot</h3>
+			<ul>
+				<li>Bootstrapタイプのテンプレートを使用してる場合にチェックを試す。jQuery UIとのコンフリクトを回避します.<br><img src="images/tmp_boot.gif" width="600px"><br><img src="images/tmp_nonboot.gif" width="600px"></li>
+				<li>Encoding<br>このボリュームのローカルエンコーディング(サーバのファイルシステムエンコーディング)。iconvの有効な値が必要.<br>ex1. ISO-8859-1 ex2. CP932 . デフォルト： 空欄(=UTF-8)</li>
+			</ul>
+        </li>
+        <li><h3>Plugin-AutoRotate</h3><br>JPEG画像の自動回転。EXIF Orientationでアップロード時に処理します..
 			<ul>
 				<li>Enable : チェックして働きます</li>
 			</ul>
         </li>
-        <li>Plugin-AutoResize<br>画像の自動サイズ。アップロード時に処理します.
+        <li><h3>Plugin-AutoResize</h3><br>画像の自動サイズ。アップロード時に処理します.
 			<ul>
 				<li>Enable : チェックして働きます</li>
 				<li>MaxWidth : 最大幅 .このサイズ以上の幅は、このサイズに変更</li>
 				<li>MaxHeight : 最大高さ .このサイズ以上の高さは、このサイズに変更 </li>
 			</ul>
         </li>
-        <li>Plugin-Watermark<br>画像にウォーターマーク（すかし）を入れる
+        <li><h3>Plugin-Watermark</h3><br>画像にウォーターマーク（すかし）を入れる
 			<ul>
 				<li>Enable : チェックして働きます</li>
 				<li>Source : ウォーターマーク（すかし）の画像名(png).<br>設置場所 : elfinder_xh/images/
@@ -144,7 +154,7 @@ ul.nav a { zoom: 1; }
 				<li>MarginBottom : ウォーターマーク（すかし）の下からの配置場所.Margin pixel. </li>
 			</ul>
         </li>
-        <li>Plugin-Normalizer<br>ファイル名やPath名等のUTF-8 Normalizer
+        <li><h3>Plugin-Normalizer</h3><br>ファイル名やPath名等のUTF-8 Normalizer
 			 <br>* 動作させるには、 Class "Normalizer"(PHP 5 >= 5.3.0, PECL intl >= 1.0.0) または PEAR package "I18N_UnicodeNormalizer"が必須です
 			<ul>
 				<li>Enable : チェックして働きます</li>
@@ -152,13 +162,15 @@ ul.nav a { zoom: 1; }
 				<li>Nfkc : 正規化形式KC：文字は互換等価性によって分解され、正準等価性によって再度合成される。</li>
 			</ul>
         </li>
-        <li>Plugin-Sanitizer:ファイル名やPath名等のサニタイズ。
+        <li><h3>Plugin-Sanitizer</h3><br>ファイル名やPath名等のサニタイズ。
 			 / ? " \< \> | を _ に自動変更します
 			<ul>
 				<li>Enable : チェックして働きます</li>
 			</ul>
         </li>
       </ol>
+      </div>
+<div style="clear:left;"></div>
       <div>
         <div align="right"><a href="help.htm#">back to top</a></div>
       </div>

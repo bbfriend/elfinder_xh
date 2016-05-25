@@ -6,6 +6,12 @@ $plugin_tx['elfinder_xh']['cf_deny_extensions']="Global denied file extensions.<
 	$plugin_tx['elfinder_xh']['cf_interface_height']="操作画面の 高さ (単位:px)<br> デフォルト:600";
 	$plugin_tx['elfinder_xh']['cf_interface_theme']="テーマ（スキン）。<br> デフォルト:elfinder";
 	$plugin_tx['elfinder_xh']['cf_interface_thumbnailSize']="サムネイルサイズ (単位:px)。サムネイルは正方形です。CSSの修正等が必要となりますので特別な場合を除いて変更しないほうが安全です<br> デフォルト:48";
+
+$plugin_tx['elfinder_xh']['cf_interface_showDotFilesDirs']="ドット(.)で始まるファイルやデイィレクトリを表示する。<br>特別な場合を除いて、チェックしないほうが安全です";
+$plugin_tx['elfinder_xh']['cf_trouble-Shoot_debugMode']="デバッグモードにする";
+$plugin_tx['elfinder_xh']['cf_trouble-Shoot_xh-TemplateIsBootstrap']="Bootstrapタイプのテンプレートを使用してる場合にチェックを試す。<br>jQuery UIとのコンフリクトを回避します.";
+$plugin_tx['elfinder_xh']['cf_trouble-Shoot_encoding']="このボリュームのローカルエンコーディング(サーバのファイルシステムエンコーディング)。<b>iconv</b>の有効な値が必要.ex1. ISO-8859-1 ex2. CP932<br> デフォルト： 空欄(=UTF-8)";
+
 	$plugin_tx['elfinder_xh']['cf_plugin-AutoRotate_enable']="JPEG画像の自動回転。<b>EXIF Orientation</b>でアップロード時に処理します.";
 	$plugin_tx['elfinder_xh']['cf_plugin-AutoResize_enable']="画像の自動サイズ。アップロード時に処理します.";
 	$plugin_tx['elfinder_xh']['cf_plugin-AutoResize_maxWidth']="最大幅 .このサイズ以上の幅は、このサイズに変更<br> デフォルト:1200";

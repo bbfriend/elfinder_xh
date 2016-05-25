@@ -176,6 +176,16 @@ if($adm)
 		/* Include elfinder. */
 		Elfinder::include_elfinder(); // load init.js etc
 
+		/* Conflict with bootstrap.js: resize,crop,rotate  dialog */
+		if($plugin_cf[$plugin]['trouble-Shoot_xh-TemplateIsBootstrap']){
+			$hjs .= '
+				<script>
+					$(document).ready(function () {
+						var btn = $.fn.button.noConflict() // reverts $.fn.button to jqueryui btn
+						$.fn.btn = btn // assigns bootstrap button functionality to $.fn.btn
+					});
+				</script>';
+		}
 		/* Init elfinder. */
 		/* Client elFinder initialization (REQUIRED) 
 		 * https://github.com/Studio-42/elFinder/wiki/Client-configuration-options-2.1
