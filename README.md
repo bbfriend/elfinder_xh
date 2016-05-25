@@ -15,7 +15,7 @@ Using [elFinder](https://github.com/Studio-42/elFinder) as filebrowser for [CMSi
 ## Install  
 1. Unzip the distribution on your computer.
 2. Upload the whole directory to your server into the CMSimple_XH directory.  
-  `plugins/elfinder_xh/* ----> plugins/elfinder_xh/*.`
+  Ex. Ver1.0.1 `elfinder_xh-1.0.1/* ----> plugins/elfinder_xh/*.`
 
 ## Support
 * [CMSimple_XH Forum /Addons and Plugins](http://cmsimpleforum.com/viewtopic.php?f=12&t=10524)
