@@ -18,7 +18,7 @@ Using [elFinder](https://github.com/Studio-42/elFinder) as filebrowser for [CMSi
   `plugins/elfinder_xh/* ----> plugins/elfinder_xh/*.`
 
 ## Support
-* [CMSimple_XH Forum /Addons and Plugins](http://cmsimpleforum.com/viewforum.php?f=12)
+* [CMSimple_XH Forum /Addons and Plugins](http://cmsimpleforum.com/viewtopic.php?f=12&t=10524)
 * [elFinder Issues](https://github.com/Studio-42/elFinder/issues)
 * 
 
