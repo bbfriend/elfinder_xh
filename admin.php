@@ -5,7 +5,7 @@
  * elFinder plugin elfinder.php
  * 
  * @author Takashi Uchiyama 
- * @version 1.01
+ * @version 1.02
  * @see https://github.com/bbfriend/elfinde_xh
  * 
  *  This file is part of the elfinder editor plugin for CMSimple.
@@ -32,7 +32,7 @@ $array = json_decode( $json , true ) ;
 /**
  * The plugin version.
  */
-define('ELFINDER_XH_VERSION', '1.01_bild'.$array["version"] );
+define('ELFINDER_XH_VERSION', '1.02_bild'.$array["version"] );
 
 
 
