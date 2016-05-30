@@ -7,10 +7,10 @@ Using [elFinder](https://github.com/Studio-42/elFinder) as filebrowser for [CMSi
 * Include elFinder Plugin :AutoRotate/AutoResize/Watermark/Normalizer/Sanitizer
 * Include elFinder Theme：windows-10/moono/bootstrap
 * Custom style 
-*
+* Add code & how to :Standalone integration of elFinder_xh (ver1.0.2)
 
 ## Download
-[Stable Version 1.0.1](https://github.com/bbfriend/elfinder_xh/releases)
+[Stable Version 1.0.2](https://github.com/bbfriend/elfinder_xh/releases)
 
 ## Install  
 1. Unzip the distribution on your computer.
