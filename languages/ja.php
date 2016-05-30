@@ -11,7 +11,7 @@ $plugin_tx['elfinder_xh']['cf_interface_showDotFilesDirs']="ドット(.)で始�
 $plugin_tx['elfinder_xh']['cf_trouble-Shoot_debugMode']="デバッグモードにする";
 $plugin_tx['elfinder_xh']['cf_trouble-Shoot_xh-TemplateIsBootstrap']="Bootstrapタイプのテンプレートを使用してる場合にチェックを試す。<br>jQuery UIとのコンフリクトを回避します.";
 $plugin_tx['elfinder_xh']['cf_trouble-Shoot_encoding']="このボリュームのローカルエンコーディング(サーバのファイルシステムエンコーディング)。<b>iconv</b>の有効な値が必要.ex1. ISO-8859-1 ex2. CP932<br> デフォルト： 空欄(=UTF-8)";
-
+	$plugin_tx['elfinder_xh']['cf_developers_sampleShow']="elFinder のスタンドアローンとして使うサンプル（メニュー）を表示. 他のプラグインからelFinder_xhを使う例です. <br>これはプラグイン開発者向けです .";
 	$plugin_tx['elfinder_xh']['cf_plugin-AutoRotate_enable']="JPEG画像の自動回転。<b>EXIF Orientation</b>でアップロード時に処理します.";
 	$plugin_tx['elfinder_xh']['cf_plugin-AutoResize_enable']="画像の自動サイズ。アップロード時に処理します.";
 	$plugin_tx['elfinder_xh']['cf_plugin-AutoResize_maxWidth']="最大幅 .このサイズ以上の幅は、このサイズに変更<br> デフォルト:1200";

@@ -45,11 +45,29 @@ if(isset($elfinder_xh))
 	$plugin = basename(dirname(__FILE__),"/");
 	
 	$o .= print_plugin_admin('on');
-	
+
 	if($admin != 'plugin_main')
 	{
 		$o .= plugin_admin_common($action,$admin,$plugin);
 	}
+
+	if($plugin_cf[$plugin]['developers_sampleShow'] 
+		&& ($admin == 'plugin_main' or $action == '')
+	){
+//		$o .= print_plugin_admin('off');
+		$o .= '<div style="background-color: #FFE2DF;">';
+		pluginmenu('ROW');
+		pluginmenu('TAB', '?&amp;' . $plugin .'&amp;admin=plugin_main&amp;action=whatsdev&amp;normal', '','What\'s For developers?');
+		pluginmenu('TAB', '?&amp;' . $plugin .'&amp;admin=plugin_main&amp;action=sample1&amp;normal', '','Sample1');
+		pluginmenu('TAB', $pth['folder']['plugins']. $plugin .'/for_plugin_developers/sample2.php', 'target="_blank"','Sample2');
+		pluginmenu('TAB', $pth['folder']['plugins']. $plugin .'/for_plugin_developers/sample3.php', 'target="_blank"','Sample3');
+//		pluginmenu('TAB', $pth['folder']['plugins']. $plugin .'/for_plugin_developers/document/doc.php', 'target="_blank"','document');
+		$o .= pluginmenu('SHOW');
+		$o .= '</div>';
+	}
+
+	
+
 
 	if ($action == ''
 		OR $action == 'plugin_text')
@@ -79,6 +97,20 @@ if(isset($elfinder_xh))
 				.'</p>';
 
 		$o .= Elfinder::systemChecks();
+
+	//For plugin developers
+	}elseif ($action == 'whatsdev'){
+		$o .='<h1>Standalone integration of elFinder Sample </h1>
+		<h2>For plugin developers </h2>
+		<p>* About sample2 , sample3<br> file name ends with -dist, you need to remove (rename) it first. This is done to prevent security issue with default elFinder_xh install. <br>ex. elfinder_xh/for_plugin_developers/<b>sample2.php-dist</b> --> elfinder_xh/for_plugin_developers/<b>sample2.php</b></p>
+		<p style="text-align:center;"> From any of the plugin, call the elfinder.'
+		. tag('img src="'.$pth['folder']['plugins']. $plugin .'/help/images/stand_alone.gif" style=" display: block;margin-left: auto;margin-right: auto;"')  . '</p>
+		<h2>Licence</h2><p>jquery.popupwindow.js : under the MIT License. see <a href="https://github.com/mkdynamic/jquery-popupwindow" target="_blank">https://github.com/mkdynamic/jquery-popupwindow</a> Ver. 2014/05/18</p>
+';
+	}elseif ($action == 'sample1'){
+		include_once ($pth['folder']['plugins']. $plugin .'/for_plugin_developers/sample1.php');
+
+		$o .= elfinder_standalone_sample1() ;
 	}
 
 }

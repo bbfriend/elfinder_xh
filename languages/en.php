@@ -9,6 +9,7 @@ $plugin_tx['elfinder_xh']['cf_interface_showDotFilesDirs']="Show Files and Direc
 $plugin_tx['elfinder_xh']['cf_trouble-Shoot_debugMode']="Start elFinder's Debug Mode ";
 $plugin_tx['elfinder_xh']['cf_trouble-Shoot_xh-TemplateIsBootstrap']="If you are using Bootstrap type of template, Try Check on.<br>Maybe ,Conflict between Bootstrap and jQuery UI .";
 $plugin_tx['elfinder_xh']['cf_trouble-Shoot_encoding']="This volume's local encoding. (server's file system encoding) It's necessary to be valid value to <b>iconv</b>.<br>ex1. ISO-8859-1 , ex2. CP932<br> Default empty(=UTF-8)";
+$plugin_tx['elfinder_xh']['cf_developers_sampleShow']="Show Standalone integration of elFinder Sample. From any of the plugin, call the elfinder_xh. <br>This is For plugin developers .";
 $plugin_tx['elfinder_xh']['cf_plugin-AutoRotate_enable']="Auto rotation on file upload of JPEG file by <b>EXIF Orientation</b>.";
 $plugin_tx['elfinder_xh']['cf_plugin-AutoResize_enable']="Auto resize on image file upload.";
 $plugin_tx['elfinder_xh']['cf_plugin-AutoResize_maxWidth']="MaxWidth .To resize . Greater than or equal to this size <br> Dafult:1200";

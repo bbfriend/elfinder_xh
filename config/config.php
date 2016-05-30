@@ -7,6 +7,7 @@ $plugin_cf['elfinder_xh']['interface_showDotFilesDirs']="";
 //$plugin_cf['elfinder_xh']['trouble-Shoot_debugMode']="";
 $plugin_cf['elfinder_xh']['trouble-Shoot_xh-TemplateIsBootstrap']="";
 $plugin_cf['elfinder_xh']['trouble-Shoot_encoding']="";
+$plugin_cf['elfinder_xh']['developers_sampleShow']="";
 $plugin_cf['elfinder_xh']['plugin-AutoRotate_enable']="";
 $plugin_cf['elfinder_xh']['plugin-AutoResize_enable']="";
 $plugin_cf['elfinder_xh']['plugin-AutoResize_maxWidth']="1200";
