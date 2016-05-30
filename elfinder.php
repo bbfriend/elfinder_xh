@@ -4,7 +4,7 @@
  * 
  * @author David Stutz https://github.com/davidstutz
  * @author Takashi Uchiyama https://github.com/bbfriend/elfinder_xh
- * @version 1.01
+ * @version 1.02
  * @license GPLv3
  * 
  *  This file is part of the elfinder filebrowser plugin for CMSimple.
@@ -51,7 +51,7 @@ class Elfinder {
 	 */
 	static function release_date() 
 	{
-	   return "2016/05/20";
+	   return "2016/05/30";
 	}
 	
 	/**
