@@ -11,5 +11,5 @@ $plugin_mcf['elfinder_xh']['plugin-Normalizer_enable']="bool";
 $plugin_mcf['elfinder_xh']['plugin-Normalizer_nfc']="bool";
 $plugin_mcf['elfinder_xh']['plugin-Normalizer_nfkc']="bool";
 $plugin_mcf['elfinder_xh']['plugin-Sanitizer_enable']="bool";
-
+$plugin_mcf['elfinder_xh']['saveOtherSize_enable']="bool";
 ?>

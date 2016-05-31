@@ -24,10 +24,11 @@ $plugin_tx['elfinder_xh']['cf_trouble-Shoot_encoding']="このボリュームの
 	$plugin_tx['elfinder_xh']['cf_plugin-Normalizer_nfc']="正規化形式C：文字は正準等価性によって分解され、再度合成。結果として文字の並びが変換前と変わることもありうる。<br> デフォルト:true";
 	$plugin_tx['elfinder_xh']['cf_plugin-Normalizer_nfkc']="正規化形式KC：文字は互換等価性によって分解され、正準等価性によって再度合成される。<br>デフォルト:true";
 	$plugin_tx['elfinder_xh']['cf_plugin-Sanitizer_enable']="ファイル名やPath名等のサニタイズ。<br>\ / ? \" \< \> |  を _ に自動変更します";
-	$plugin_tx['elfinder_xh']['cf_middleimage_path']="Directory for Middle Size Images ";
-	$plugin_tx['elfinder_xh']['cf_middleimage_maxwidth']="Max width of Middle Image.dafult: 300";
-	$plugin_tx['elfinder_xh']['cf_middleimage_maxheight']="Max Height of Middle Image.dafult: 300";
-	$plugin_tx['elfinder_xh']['cf_middleimage_jpgquality']="Jpage Quality of Middle Image.dafult: 70";
+	$plugin_tx['elfinder_xh']['cf_saveOtherSize_enable']="画像のアップロード時に別サイズの画像を作成します。<br>正規な機能ではありません。この機能は将来、変更される可能性があります。";
+	$plugin_tx['elfinder_xh']['cf_saveOtherSize_maxWidth']="別サイズの画像の幅.<br>デフォルト: 300";
+	$plugin_tx['elfinder_xh']['cf_saveOtherSize_maxHeight']="別サイズの画像の高さ<br>デフォルト: 300";
+	$plugin_tx['elfinder_xh']['cf_saveOtherSize_jpgquality']="画像の品質<br>デフォルト: 70";
+	$plugin_tx['elfinder_xh']['cf_saveOtherSize_dirName']="別サイズの画像の保存先<br> デフォルト:smallSize. ＊ディレクトリは [images]/smallSize となります<br> ";
 
 	$plugin_tx['elfinder_xh']['syscheck_title']="システムチェック";
 	$plugin_tx['elfinder_xh']['syscheck_phpversion']="あなたの PHP は %s です(&ge; %s)";

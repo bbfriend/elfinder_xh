@@ -4,7 +4,7 @@ $plugin_cf['elfinder_xh']['interface_height']="600";
 $plugin_cf['elfinder_xh']['interface_theme']="elfinder";
 $plugin_cf['elfinder_xh']['interface_thumbnailSize']="48";
 $plugin_cf['elfinder_xh']['interface_showDotFilesDirs']="";
-//$plugin_cf['elfinder_xh']['trouble-Shoot_debugMode']="";
+$plugin_cf['elfinder_xh']['trouble-Shoot_debugMode']="";
 $plugin_cf['elfinder_xh']['trouble-Shoot_xh-TemplateIsBootstrap']="";
 $plugin_cf['elfinder_xh']['trouble-Shoot_encoding']="";
 $plugin_cf['elfinder_xh']['developers_sampleShow']="";
@@ -20,5 +20,9 @@ $plugin_cf['elfinder_xh']['plugin-Normalizer_enable']="";
 $plugin_cf['elfinder_xh']['plugin-Normalizer_nfc']="";
 $plugin_cf['elfinder_xh']['plugin-Normalizer_nfkc']="";
 $plugin_cf['elfinder_xh']['plugin-Sanitizer_enable']="";
-
+$plugin_cf['elfinder_xh']['saveOtherSize_enable']="";
+$plugin_cf['elfinder_xh']['saveOtherSize_maxWidth']="300";
+$plugin_cf['elfinder_xh']['saveOtherSize_maxHeight']="300";
+$plugin_cf['elfinder_xh']['saveOtherSize_jpgquality']="70";
+$plugin_cf['elfinder_xh']['saveOtherSize_dirName']="smallSize";
 ?>

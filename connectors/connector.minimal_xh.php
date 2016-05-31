@@ -72,11 +72,11 @@ $not_del_folder =	"/(".
 // https://github.com/Studio-42/elFinder/wiki/Connector-configuration-options
 // https://github.com/Studio-42/elFinder/wiki/Connector-configuration-options-2.1
 $opts = array(
-//	'debug' => true,	
+	'debug' => $plugin_cf['elfinder_xh']['trouble-Shoot_debugMode'],//true or false
 	'bind' =>
 
 		array(
-			'upload' => array('smallImage'),
+			'upload' => array('elfinder_othersize'),
 
 			'upload.presave' => array(
 //				'smallImage',
@@ -180,18 +180,27 @@ $opts = array(
 		)
 	)
 );
-/** Add in the future ?
- *	https://github.com/Studio-42/elFinder/issues/1331
+/** Add 2016/05/31
+ * Original:https://github.com/Studio-42/elFinder/issues/1331
  *
 **/
-/*
-function smallImage($cmd, $result, $args, $elfinder, $volume) {
+function elfinder_othersize($cmd, $result, $args, $elfinder, $volume) {
+	global $plugin_cf;
+	if(!$plugin_cf['elfinder_xh']['saveOtherSize_enable']){
+		return;
+	}
     // make image maxsize
-    $maxWidth = 300;
-    $maxHeight = 300;
-    $jpgQuality = 70;
-//    $smallsDir = set_realpath('./resources/smallSize/');
-    $smallsDir = $_SESSION['elfinder']['root'] . $_SESSION["elfinder"]["folders"]["images"] .'smallSize/';
+    $maxWidth 	= $plugin_cf['elfinder_xh']['saveOtherSize_maxWidth'];
+    $maxHeight 	= $plugin_cf['elfinder_xh']['saveOtherSize_maxHeight'];
+    $jpgQuality	= $plugin_cf['elfinder_xh']['saveOtherSize_jpgquality'];
+    $smallsDir = $_SESSION['elfinder']['root'] . $_SESSION["elfinder"]["folders"]["images"] .$plugin_cf['elfinder_xh']['saveOtherSize_dirName'] ;
+
+	if(!file_exists($smallsDir)){
+	    if(mkdir($smallsDir, 0755)){
+	        //certainly
+	        chmod($smallsDir, 0755);
+		}
+	}
 
     if ($volume && $result && isset($result['added'])) {
 
@@ -199,6 +208,10 @@ function smallImage($cmd, $result, $args, $elfinder, $volume) {
             if ($file = $volume->file($item['hash'])) {
                 $path = $volume->getPath($item['hash']);
                 if (strpos($file['mime'], 'image/') === 0 && ($srcImgInfo = @getimagesize($path))) {
+
+					if ($srcImgInfo[0] < $maxWidth || $srcImgInfo[1] < $maxHeight) {
+						return;
+					}
                     $zoom = min(($maxWidth/$srcImgInfo[0]),($maxHeight/$srcImgInfo[1]));
                     $width = round($srcImgInfo[0] * $zoom);
                     $height = round($srcImgInfo[1] * $zoom);
@@ -209,7 +222,8 @@ function smallImage($cmd, $result, $args, $elfinder, $volume) {
                         stream_copy_to_stream($src, $tfp);
                         fclose($src);
                         if ($volume->imageUtil('resize', $temp, compact('width', 'height', 'jpgQuality'))) {
-                            @copy($temp, $smallsDir . '/' . $file['name']);
+                            @copy($temp, $smallsDir . '/' .$file['name']);
+//                            @copy($temp, $smallsDir . '/' . $maxWidth .'x'.$maxHeight .'-'.$file['name']);
                         }
                     }
                 }
@@ -217,7 +231,7 @@ function smallImage($cmd, $result, $args, $elfinder, $volume) {
         }
     }
 }
-****/
+
 
 
 // run elFinder
