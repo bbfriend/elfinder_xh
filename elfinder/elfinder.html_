@@ -29,9 +29,8 @@
 			// https://github.com/Studio-42/elFinder/wiki/Client-configuration-options
 			$(document).ready(function() {
 				$('#elfinder').elfinder({
-					url : 'php/connector.minimal.php',  // connector URL (REQUIRED)
+					url : 'php/connector.minimal.php'  // connector URL (REQUIRED)
 					// , lang: 'ru'                    // language (OPTIONAL)
-requestType : 'post'
 				});
 			});
 		</script>
