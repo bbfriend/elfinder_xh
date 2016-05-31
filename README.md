@@ -7,7 +7,9 @@ Using [elFinder](https://github.com/Studio-42/elFinder) as filebrowser for [CMSi
 * Include elFinder Plugin :AutoRotate/AutoResize/Watermark/Normalizer/Sanitizer
 * Include elFinder Theme：windows-10/moono/bootstrap
 * Custom style 
-* Add code & how to :Standalone integration of elFinder_xh (ver1.0.2)
+* Standalone integration of elFinder_xh code (>= 1.0.2)
+* debug mode  (>= 1.0.3)
+* Add function :Produce an image of another size at the time of upload  (>= 1.0.3)
 
 ## Download
 [Stable Version 1.0.2](https://github.com/bbfriend/elfinder_xh/releases)
