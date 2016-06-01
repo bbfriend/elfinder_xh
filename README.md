@@ -30,7 +30,7 @@ plugins
          ･･･ 
 ```
 
-3. To activate elFinder go to Setting→CMS→Filebrowser→Name and enter `elfinder_xh`.
+ 3..To activate elFinder go to Setting→CMS→Filebrowser→Name and enter `elfinder_xh`.
 
 ## Support
 * [CMSimple_XH Forum /Addons and Plugins](http://cmsimpleforum.com/viewtopic.php?f=12&t=10524)
