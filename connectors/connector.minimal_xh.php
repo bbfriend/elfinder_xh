@@ -181,8 +181,9 @@ $opts = array(
 	)
 );
 /** Add 2016/05/31
+ * Produce an image of another size at the time of upload.
+ * This is a non-regular feature.* This is likely to be change in the future
  * Original:https://github.com/Studio-42/elFinder/issues/1331
- *
 **/
 function elfinder_othersize($cmd, $result, $args, $elfinder, $volume) {
 	global $plugin_cf;
