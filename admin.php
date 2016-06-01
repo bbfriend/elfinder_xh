@@ -25,6 +25,10 @@ if (!defined('CMSIMPLE_XH_VERSION')) {
     exit;
 }
 
+if (function_exists('XH_registerPluginType')) {
+	XH_registerPluginType('filebrowser', $plugin);
+}
+
 // Read elFinder's Json file
 $json = file_get_contents($pth['folder']['plugins']. $plugin .'/elfinder/package.json');
 $array = json_decode( $json , true ) ;
