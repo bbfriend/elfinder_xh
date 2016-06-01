@@ -86,7 +86,7 @@ ul.nav a { zoom: 1; }
         <li>Upload the whole directory to your server into the CMSimple_XH directory.
         <br>
 			<ul>
-			  <li>plugins/elfinder_xh/* ----&gt; plugins/elfinder_xh/*.</li>
+			  <li>例）elfinder_xh-1.0.1/elfinder_xh-1.0.1/* --------&gt; plugins/elfinder_xh/*</li>
 			</ul>
         </li>
         <li>elFinder単体としてのテスト　<a href="https://github.com/Studio-42/elFinder#installation" target="_blank">参考</a><br>
@@ -98,8 +98,8 @@ ul.nav a { zoom: 1; }
         </li>
         <li>テスト終了後､<br>
 		plugins/elfinder_xh/elfinder/php/connector.minimal.php <br>
-		plugins/elfinder_xh/elfinder/elfinder.html の２つを削除（または、推測されない名称に変更）
-
+		plugins/elfinder_xh/elfinder/elfinder.html の２つを削除（または、推測されない名称に変更）<br> .</li>
+        <li>To activate elFinder go to 設定→CMS→Filebrowser→Name に <b>elfinder_xh</b>.</li>
       </ol>
       <h2><a name="settings">Settings</a></h2>
       <p>管理画面で　&quot;Plugins&quot;メニューより &quot;Elfinder_xh&quot;.</p>
@@ -129,25 +129,26 @@ ul.nav a { zoom: 1; }
         </li>
         <li><h3>Trouble-Shoot</h3>
 			<ul>
+				<li>DebugMode<br>elFinderのデバッグモードを開始する .<br><img src="images/debug.gif" width="300px"></li>
 				<li>Bootstrapタイプのテンプレートを使用してる場合にチェックを試す。jQuery UIとのコンフリクトを回避します.<br><img src="images/tmp_boot.gif" width="600px"><br><img src="images/tmp_nonboot.gif" width="600px"></li>
 				<li>Encoding<br>このボリュームのローカルエンコーディング(サーバのファイルシステムエンコーディング)。iconvの有効な値が必要.<br>ex1. ISO-8859-1 ex2. CP932 . デフォルト： 空欄(=UTF-8)</li>
 			</ul>
         </li>
-        <li><h3>Developers SampleShow</h3><br>elFinder のスタンドアローンとして使うサンプル（メニュー）を表示. <br><img src="images/stand_alone_menu.gif" width="400px"><br>これはプラグイン開発者が各プラグインからelFinder_xhを使うサンプルです.<br><img src="images/stand_alone.gif" width="500px">
+        <li><h3>Developers SampleShow</h3>elFinder のスタンドアローンとして使うサンプル（メニュー）を表示. <br><img src="images/stand_alone_menu.gif" width="400px"><br>これはプラグイン開発者が各プラグインからelFinder_xhを使うサンプルです.<br><img src="images/stand_alone.gif" width="500px">
         </li>
-        <li><h3>Plugin-AutoRotate</h3><br>JPEG画像の自動回転。EXIF Orientationでアップロード時に処理します..
+        <li><h3>Plugin-AutoRotate</h3>JPEG画像の自動回転。EXIF Orientationでアップロード時に処理します..
 			<ul>
 				<li>Enable : チェックして働きます</li>
 			</ul>
         </li>
-        <li><h3>Plugin-AutoResize</h3><br>画像の自動サイズ。アップロード時に処理します.
+        <li><h3>Plugin-AutoResize</h3>画像の自動サイズ。アップロード時に処理します.
 			<ul>
 				<li>Enable : チェックして働きます</li>
 				<li>MaxWidth : 最大幅 .このサイズ以上の幅は、このサイズに変更</li>
 				<li>MaxHeight : 最大高さ .このサイズ以上の高さは、このサイズに変更 </li>
 			</ul>
         </li>
-        <li><h3>Plugin-Watermark</h3><br>画像にウォーターマーク（すかし）を入れる
+        <li><h3>Plugin-Watermark</h3>画像にウォーターマーク（すかし）を入れる
 			<ul>
 				<li>Enable : チェックして働きます</li>
 				<li>Source : ウォーターマーク（すかし）の画像名(png).<br>設置場所 : elfinder_xh/images/
@@ -156,7 +157,7 @@ ul.nav a { zoom: 1; }
 				<li>MarginBottom : ウォーターマーク（すかし）の下からの配置場所.Margin pixel. </li>
 			</ul>
         </li>
-        <li><h3>Plugin-Normalizer</h3><br>ファイル名やPath名等のUTF-8 Normalizer
+        <li><h3>Plugin-Normalizer</h3>ファイル名やPath名等のUTF-8 Normalizer
 			 <br>* 動作させるには、 Class "Normalizer"(PHP 5 >= 5.3.0, PECL intl >= 1.0.0) または PEAR package "I18N_UnicodeNormalizer"が必須です
 			<ul>
 				<li>Enable : チェックして働きます</li>
@@ -164,12 +165,22 @@ ul.nav a { zoom: 1; }
 				<li>Nfkc : 正規化形式KC：文字は互換等価性によって分解され、正準等価性によって再度合成される。</li>
 			</ul>
         </li>
-        <li><h3>Plugin-Sanitizer</h3><br>ファイル名やPath名等のサニタイズ。
+        <li><h3>Plugin-Sanitizer</h3>ファイル名やPath名等のサニタイズ。
 			 / ? " \< \> | を _ に自動変更します
 			<ul>
 				<li>Enable : チェックして働きます</li>
 			</ul>
         </li>
+        <li><h3>SaveOtherSize</h3>画像のアップロード時に、別サイズの画像を保存する.これは正規な機能ではありません。.<br>* 将来、変更される可能性があります
+			<ul>
+				<li>Enable : チェックして働きます</li>
+				<li>MaxWidth : 別サイズの画像の幅.</li>
+				<li>MaxHeight : 別サイズの画像の高さ.</li>
+				<li>Jpgquality : Jpeg 画像の画質.</li>
+				<li>DirName : 別サイズの画像の保存ディレクトリ名.<br>ex.smallSize. * [images]/smallSize　に保存されます</li>
+			</ul>
+        </li>
+
       </ol>
       </div>
 <div style="clear:left;"></div>
