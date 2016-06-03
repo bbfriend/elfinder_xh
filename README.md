@@ -10,9 +10,10 @@ Using [elFinder](https://github.com/Studio-42/elFinder) as filebrowser for [CMSi
 * Standalone integration of elFinder_xh code (>= 1.0.2)
 * debug mode  (>= 1.0.3)
 * Add function :Produce an image of another size at the time of upload  (>= 1.0.3)
+* image can be edited in pixlr.com [example Movie](https://www.youtube.com/watch?v=nUXuVT3zoio)  (>= 1.0.3)
 
 ## Download
-[Stable Version 1.0.2](https://github.com/bbfriend/elfinder_xh/releases)
+[Stable Version 1.0.3](https://github.com/bbfriend/elfinder_xh/releases)
 
 ## Install  
 1. Unzip the distribution on your computer.
