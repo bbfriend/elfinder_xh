@@ -5,7 +5,7 @@
  * elFinder plugin elfinder.php
  * 
  * @author Takashi Uchiyama 
- * @version 1.02
+ * @version 1.03
  * @see https://github.com/bbfriend/elfinde_xh
  * 
  *  This file is part of the elfinder editor plugin for CMSimple.
@@ -30,13 +30,13 @@ if (function_exists('XH_registerPluginType')) {
 }
 
 // Read elFinder's Json file
-$json = file_get_contents($pth['folder']['plugins']. $plugin .'/elfinder/package.json');
+$json = @file_get_contents($pth['folder']['plugins']. $plugin .'/elfinder/package.json');
 $array = json_decode( $json , true ) ;
 
 /**
  * The plugin version.
  */
-define('ELFINDER_XH_VERSION', '1.02_bild'.$array["version"] );
+define('ELFINDER_XH_VERSION', '1.03_bild'.$array["version"] );
 
 
 
@@ -234,6 +234,7 @@ if($adm)
 					dateFormat :"' . $tx['lastupdate']['dateformat'] . '",
 					width     :"' . $plugin_cf[$plugin]['interface_width'] . '",
 					height     :"' . $plugin_cf[$plugin]['interface_height'] . '",
+					commands : elfinder_commands,
 					ui      :  elfinder_ui,
 					uiOptions : {
 						toolbar     : elfinder_toolbar

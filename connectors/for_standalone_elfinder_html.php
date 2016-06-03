@@ -125,7 +125,7 @@ function el_logincheck()
 		<!--<script src="js/extras/quicklook.googledocs.js"></script>-->
 
 		<script src="../init.js"></script>
-
+		<script src="../elfinder_custum/js/commands/pixlr.js"></script>
 <?php 
 	if( $_SESSION['elfinder']['lang'] != 'en'){
 ?>
@@ -144,6 +144,7 @@ function el_logincheck()
 		      height: '520',
 		      dateFormat:"<?php echo $_SESSION['elfinder']['dateformat']; ?>",
 		      fancyDateFormat : '$1 H:m:i',
+		      commands : elfinder_commands,
 		      ui    : elfinder_ui,
 		      uiOptions : {
 			      toolbar     : elfinder_toolbar

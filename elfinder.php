@@ -4,7 +4,7 @@
  * 
  * @author David Stutz https://github.com/davidstutz
  * @author Takashi Uchiyama https://github.com/bbfriend/elfinder_xh
- * @version 1.02
+ * @version 1.03
  * @license GPLv3
  * 
  *  This file is part of the elfinder filebrowser plugin for CMSimple.
@@ -156,7 +156,7 @@ class Elfinder {
 				$hjs .= '<script src="' . $pth['folder']['plugins'] . $plugin . '/elfinder/js/i18n/elfinder.' . $_SESSION['elfinder']['lang'] . '.js" type="text/javascript" charset="utf-8"></script>';
 			}
 			$hjs .= '<script src="' . $pth['folder']['plugins'] . $plugin . '/init.js" type="text/javascript"></script>';
-			
+			$hjs .= '<script src="' . $pth['folder']['plugins'] . $plugin . '/elfinder_custum/js/commands/pixlr.js" type="text/javascript"></script>';
 			$elfinder_included = TRUE;
 		}
 	}

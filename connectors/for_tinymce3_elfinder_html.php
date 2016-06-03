@@ -55,7 +55,7 @@ function el_logincheck()
 		<!--<script src="js/extras/quicklook.googledocs.js"></script>-->
 
 		<script src="../init.js"></script>
-
+		<script src="../elfinder_custum/js/commands/pixlr.js"></script>
 		<!-- TinyMCE Popup class (REQUIRED) -->
 		<script type="text/javascript" src="../../tinymce/tiny_mce/tiny_mce_popup.js"></script>
 <?php 
@@ -106,6 +106,7 @@ function el_logincheck()
 		      height: '520',
 		      dateFormat:"<?php echo $_SESSION['elfinder']['dateformat']; ?>",
 		      fancyDateFormat : '$1 H:m:i',
+		      commands : elfinder_commands,
 		      ui    : elfinder_ui,
 		      uiOptions : {
 			      toolbar     : elfinder_toolbar

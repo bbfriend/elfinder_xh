@@ -4,7 +4,7 @@
  *
  * @author    BBFeiend 
  * @copyright 2016  <http://cmsimple-jp.org>
- * @Ver 1.01
+ * @Ver 1.03
 */
 
 //error_reporting(0); // Set E_ALL for debuging
@@ -18,10 +18,16 @@ $startPath = $_SESSION['elfinder']['startpath'];
 // read elFinder_XH config.php
 include_once dirname(__FILE__).DIRECTORY_SEPARATOR. '../config/config.php';
 
-include_once dirname(__FILE__).DIRECTORY_SEPARATOR.'../elfinder/php/elFinderConnector.class.php';
-include_once dirname(__FILE__).DIRECTORY_SEPARATOR.'../elfinder/php/elFinder.class.php';
-include_once dirname(__FILE__).DIRECTORY_SEPARATOR.'../elfinder/php/elFinderVolumeDriver.class.php';
-include_once dirname(__FILE__).DIRECTORY_SEPARATOR.'../elfinder/php/elFinderVolumeLocalFileSystem.class.php';
+// load composer autoload before load elFinder autoload If you need composer
+//require dirname(__FILE__).DIRECTORY_SEPARATOR.'../elfinder/php/vendor/autoload.php';
+
+// elFinder autoload
+require dirname(__FILE__).DIRECTORY_SEPARATOR.'../elfinder/php/autoload.php';
+// ===============================================
+
+// Enable FTP connector netmount
+elFinder::$netDrivers['ftp'] = 'FTP';
+// ===============================================
 
 /**
  * Simple function to demonstrate how to control file access using "accessControl" callback.

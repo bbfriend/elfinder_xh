@@ -977,3 +977,7 @@
   padding: 5px;
   margin: 0 0 5px 6px;
 }
+/** Add Takashi Uchiyama 20160603 **/
+.elfinder-button-icon-pixlr:before {
+  content: '\f1fc';
+}

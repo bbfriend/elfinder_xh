@@ -154,7 +154,6 @@
   .elfinder .elfinder-toolbar .elfinder-buttonset .elfinder-button-icon-rm {
     background-image: url('../images/16px/rm.png');
   }
-
   .elfinder .elfinder-toolbar .elfinder-buttonset .elfinder-button-icon-edit {
     background-image: url('../images/16px/edit.png');
   }
@@ -207,4 +206,8 @@
   /* Menu item sorting descending icon */
   .elfinder .elfinder-toolbar .elfinder-buttonset .elfinder-button-menu-item-selected.elfinder-menu-item-sort-desc .elfinder-menu-item-sort-dir {
     /* */
+  }
+/** Add Takashi Uchiyama 20160602****/
+  .elfinder .elfinder-toolbar .elfinder-buttonset .elfinder-button-icon-pixlr {
+    background-image: url('../images/16px/pixlr.png');
   }
