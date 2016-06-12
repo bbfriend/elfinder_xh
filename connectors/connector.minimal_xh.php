@@ -22,7 +22,7 @@ include_once dirname(__FILE__).DIRECTORY_SEPARATOR. '../config/config.php';
 //require dirname(__FILE__).DIRECTORY_SEPARATOR.'../elfinder/php/vendor/autoload.php';
 
 // elFinder autoload
-require dirname(__FILE__).DIRECTORY_SEPARATOR.'../elfinder/php/autoload.php';
+require dirname(__FILE__).DIRECTORY_SEPARATOR.'../elfinder_custum/php/autoload_xh.php';
 // ===============================================
 
 // Enable FTP connector netmount
@@ -177,7 +177,8 @@ $opts = array(
 			'uploadDeny'		=> array('all'),     // All Mimetypes not allowed to upload
 			'uploadMaxSize'	=> $upload_maxsize,
 			'uploadAllow'	=> $upload_allow,
-
+'statOwner'	=> true,
+'allowChmodReadOnly'	=> true,
 			'disabled' => array('zipdl'),//Disable folder download
 			'encoding'    => $plugin_cf['elfinder_xh']['trouble-Shoot_encoding'],
 			'locale'		=> $_SESSION['elfinder']['locale'],
@@ -242,6 +243,6 @@ function elfinder_othersize($cmd, $result, $args, $elfinder, $volume) {
 
 
 // run elFinder
-$connector = new elFinderConnector(new elFinder($opts));
+$connector = new elFinderConnector(new elFinder_xh($opts));
 $connector->run();
 
