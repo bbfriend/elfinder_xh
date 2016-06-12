@@ -92,7 +92,8 @@ elFinder.prototype.commands.pixlr = function() {
 		        		fire('express');
 		        		$(this).elfinderdialog('destroy');
 		        		return false;
-		        	}));
+		        	}))
+		        .append('<br>When ComeBack(Save Referer),Reload once');
 		
 		dialog = fm.dialog(selector, opts);
 
