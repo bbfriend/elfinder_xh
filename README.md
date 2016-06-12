@@ -13,7 +13,7 @@ Using [elFinder](https://github.com/Studio-42/elFinder) as filebrowser for [CMSi
 * image can be edited in pixlr.com [example Movie](https://www.youtube.com/watch?v=nUXuVT3zoio)  (>= 1.0.3)
 
 ## Download
-[Stable Version 1.0.3](https://github.com/bbfriend/elfinder_xh/releases)
+[Stable Version 1.0.4](https://github.com/bbfriend/elfinder_xh/releases)
 
 ## Install  
 1. Unzip the distribution on your computer.
