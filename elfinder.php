@@ -114,7 +114,8 @@ class Elfinder {
 	 */
 	public static function include_jquery()
 	{
-		global $pth, $plugin, $hjs;
+//		global $pth, $plugin, $hjs;
+		global $pth, $hjs;
 		$plugin = basename(dirname(__FILE__),"/");
 		
 		static $jquery_included = FALSE;
@@ -140,7 +141,9 @@ class Elfinder {
 	 */
 	public static function include_elfinder()
 	{
-	 	global $pth, $plugin, $hjs, $sl,$plugin_cf;
+//https://github.com/bbfriend/elfinder_xh/issues/2
+//	 	global $pth, $plugin, $hjs, $sl,$plugin_cf;
+	 	global $pth, $hjs, $sl,$plugin_cf;
 		$plugin = basename(dirname(__FILE__),"/");
 		
 		static $elfinder_included = FALSE;

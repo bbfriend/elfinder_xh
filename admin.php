@@ -29,6 +29,20 @@ if (function_exists('XH_registerPluginType')) {
 	XH_registerPluginType('filebrowser', $plugin);
 }
 
+//for old_php =< 5.1
+if (!function_exists('json_encode')) {
+require_once $pth['folder']['plugins']. $plugin .'/elfinder_custum/php/JSON.php';
+	function json_encode($value) {
+		$s = new Services_JSON();
+		return $s->encodeUnsafe($value);
+	}
+
+	function json_decode($json, $assoc = false) {
+	$s = new Services_JSON($assoc ? SERVICES_JSON_LOOSE_TYPE : 0);
+	return $s->decode($json);
+	}
+}
+
 // Read elFinder's Json file
 $json = @file_get_contents($pth['folder']['plugins']. $plugin .'/elfinder/package.json');
 $array = json_decode( $json , true ) ;
