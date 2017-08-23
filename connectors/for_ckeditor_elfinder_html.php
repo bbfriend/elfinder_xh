@@ -19,13 +19,19 @@ if (!el_logincheck() ) { //Not login
 function el_logincheck()
 {
     if (session_id() == '') {
+		$filename = dirname(__FILE__) . '/../../../cmsimple/.sessionname';
+		if (file_exists($filename)) {
+			session_name(file_get_contents($filename));
+		}
         session_start();
     }
     $el_root = $_SESSION["elfinder"]["sn"];
 
     return isset($_SESSION['xh_password'])
-        && isset($_SESSION['xh_password'][$el_root])
+        && (isset($_SESSION['xh_password'][$el_root])
         && $_SESSION['xh_password'][$el_root] == $_SESSION['elfinder']['password']
+		|| isset($_SESSION['xh_password'])
+		&& $_SESSION['xh_password'] == $_SESSION['elfinder']['password'])
         && isset($_SESSION['xh_user_agent'])
         && $_SESSION['xh_user_agent'] == md5($_SERVER['HTTP_USER_AGENT']);
 }
