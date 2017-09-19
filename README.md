@@ -13,7 +13,8 @@ Using [elFinder](https://github.com/Studio-42/elFinder) as filebrowser for [CMSi
 * image can be edited in pixlr.com [example Movie](https://www.youtube.com/watch?v=nUXuVT3zoio)  (>= 1.0.3)
 
 ## Download
-[Stable Version 1.0.5](https://github.com/bbfriend/elfinder_xh/releases)... <--- Don't Work CMSimple_XH 1.7  　　
+[Stable Version 1.0.5](https://github.com/bbfriend/elfinder_xh/releases)... Don't Work CMSimple_XH 1.7　
+
 For CMSimple_XH Ver1.7 is  https://github.com/bbfriend/elfinder_xh/archive/master.zip   
 
 
