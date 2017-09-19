@@ -10,6 +10,10 @@
 //error_reporting(0); // Set E_ALL for debuging
 
 if (session_id() == '') {
+	$temp = dirname(__FILE__) . '/../../../cmsimple/.sessionname';
+	if (file_exists($temp)) {
+		session_name(file_get_contents($temp));
+	}
     session_start();
 }
 
