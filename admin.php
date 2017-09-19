@@ -55,7 +55,7 @@ define('ELFINDER_XH_VERSION', '1.05_bild'.$array["version"] );
 
 
 if (!class_exists('Elfinder')) require dirname(__FILE__)."/elfinder.php";
-if(isset($elfinder_xh))
+if(function_exists('XH_wantsPluginAdministration') && XH_wantsPluginAdministration('elfinder_xh') || isset($elfinder_xh))
 {
 	initvar('admin');
 	initvar('post');
